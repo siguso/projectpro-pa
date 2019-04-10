@@ -16,6 +16,16 @@
     
     <dependencies>
         <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>materialize</artifactId>
+            <version>1.0.0-rc.2</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
