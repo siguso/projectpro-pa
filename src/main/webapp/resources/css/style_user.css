@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #00abc5;
+    background-size: contain;
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+/********** text box **********/
+/* label color */
+.section .forms label{
+    color:  #000;
+}
+/* label focus color */
+.section .forms .input-field input[type=email]:focus + label,
+.section .forms .input-field input[type=password]:focus + label,
+.section .forms .input-field input[type=text]:focus + label,
+.section .forms .input-field input[type=tel]:focus + label,
+.section .forms .input-field textarea:focus + label{    
+    color:  #00abc5;
+}
+/* label underline focus color */
+.section .forms .input-field input[type=email]:focus,
+.section .forms .input-field input[type=password]:focus,
+.section .forms .input-field input[type=text]:focus,
+.section .forms .input-field input[type=tel]:focus,
+.section .forms .input-field textarea:focus{
+    border-bottom: 1px solid  #00abc5;
+    box-shadow: 0 1px 0 0  #00abc5;
+}
+.section .forms .input-field .prefix.active {
+    color: #00abc5;
+}
+/******************************/
+
+/********** botones **********/
+.section .btn{
+    background-color: #00abc5;
+}
+.section .btn:hover{
+    background-color: #bdbdbd;
+}
+.section .btn{
+    width: 100%;
+}
+.section .archivo{
+    width: 30%;
+}
+/*********************************/
+
+#pregunta a{
+    font-size: 13px;
+    text-align: center;
+    color: #00abc5;
+}
+#pregunta a:hover{
+    /*background-color: #bdbdbd;*/
+    color: #bdbdbd;
+}
+.section .link-cuenta{
+    font-size: 20px;
+}
+
+/********** card panel **********/
+.section .card-panel{
+    padding-top: 5px;
+    margin-top: -5px;
+    margin-bottom: 4px;
+}
+/********************************/
+
+/********** hide/show password **********/
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+/***************************************/
+
+/*********** imagen de perfil user_registration **********/
+#imageUpload{
+    display: none;
+}
+#profileImage{
+    cursor: pointer;
+}
+#profile-container{
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: auto;
+    margin-left: auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+#profile-container img{
+    width: 120px;
+    height: 120px;
+}
+/*******************************************************/
+
+/********** logo project_registration *********/
+#project-registration{
+    width: 120px;
+    height: 120px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+/*********************************************/
+
+/********** date **********/
+/*.section .datepicker-date-display{
+    background-color: #bdbdbd;
+}
+.section .datepicker-cancel,
+.section .datepicker-done{
+    color: #00abc5;
+}
+.section .datepicker-table td.is-today{
+    color: #00abc5;
+}
+.section .datepicker-table td.is-selected{
+    background-color: #bdbdbd;
+    color:#fff;
+}
+.section .datepicker-day-button:focus{
+    background-color: #bdbdbd;
+}*/
+/*************************/
+
+/********** boton up **********/
+.up{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+/******************************/
+
+/********** scrollbar **********/
+*::-webkit-scrollbar {
+	width: 10px;
+	background: #424242;
+}
+*::-webkit-scrollbar-thumb {
+	/*background: rgba(255,255,255, .5);*/
+        background: #1a95d5;
+	border-radius: 10px;
+	/*border: 2px solid #424242;*/
+}
+/*******************************/
