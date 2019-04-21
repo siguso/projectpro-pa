@@ -32,14 +32,13 @@
                                 </div>                  
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">email</i>
-                                    <input id="email" type="email" name="email" class="validate" required=""/>
-                                    <label for="email">Correo Electronico</label>
-                                    <span class="helper-text" data-error="correo no valido" data-success="correo valido"></span>
+                                    <h:inputText id="email" required="true" value="" requiredMessage="Correo Electronico es requerido" />
+                                    <h:outputLabel for="email" value="Correo Electronico"/>
                                 </div>
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">lock</i>
-                                    <input id="password" type="password" name="password" class="validate" required=""/>
-                                    <label for="password">Contraseña</label>
+                                    <i class="material-icons prefix">lock</i>                    
+                                    <h:inputSecret id="password" required="true" value="password" requiredMessage="Contraseña es requerida" />
+                                    <h:outputLabel for="password" value="Contraseña"/>
                                     <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                     <span class="helper-text" data-error="contraseña es requerida" data-success=""></span>
                                 </div>
@@ -55,17 +54,13 @@
                                     <a href="password_recovery2.xhtml">Has olvidado tu contraseña?</a>
                                 </div>
                                 <div class="input-field col s12">
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">
-                                        <i class="material-icons right">input</i>Ingresar
-                                    </button>
+                                    <h:commandLink value="INGRESAR" styleClass="btn waves-effect waves-light" />
                                 </div>
                                 <div class="input-field col s12">
                                     <p class="center">¿Aún no tienes cuenta?</p>
                                 </div> 
                                 <div class="input-field col s12">
-                                    <a class="waves-effect waves-light btn" href="user_registration.xhtml">
-                                        <i class="material-icons right">person_add</i>Crear Cuenta
-                                    </a>
+                                    <h:outputLink value="user_registration.xhtml" styleClass="btn waves-effect waves-light">Crear Cuenta</h:outputLink>
                                 </div>                                                                              
                             </form>
                         </div>
