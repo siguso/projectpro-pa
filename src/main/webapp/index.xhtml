@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>ProjectPRO</title>
         <link rel="shortcut icon" href="resources/img/LogoIcon.ico" />
@@ -23,7 +24,8 @@
                             <div class="input-field col s12">
                                 <a href="#" class="hide-on-large-only right equis" id="menu-toggle"><i class="material-icons">close</i></a>
                             </div>
-                            <form class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">                                                                   
+                            <h:form class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">   
+                                <p:growl autoUpdate="true" />
                                 <div class="input-field col s12 center">
                                     <img src="resources/img/logoWBirrete6.png" class="responsive-img" alt=""/>
                                     <br></br>
@@ -40,7 +42,6 @@
                                     <h:inputSecret id="password" required="true" value="password" requiredMessage="Contraseña es requerida" />
                                     <h:outputLabel for="password" value="Contraseña"/>
                                     <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                                    <span class="helper-text" data-error="contraseña es requerida" data-success=""></span>
                                 </div>
                                 <div class="input-field col s6 checkbox">
                                     <p>
@@ -62,7 +63,7 @@
                                 <div class="input-field col s12">
                                     <h:outputLink value="user_registration.xhtml" styleClass="btn waves-effect waves-light">Crear Cuenta</h:outputLink>
                                 </div>                                                                              
-                            </form>
+                            </h:form>
                         </div>
                     </div>                        
                 </div>
