@@ -16,7 +16,7 @@
     <h:body>
         <div class="section register container">
             <div class="row forms">
-                <h:form class="col s12 m9 l8 offset-l2 offset-m2">
+                <h:form id="login-form" class="col s12 m9 l8 offset-l2 offset-m2">
                     <p:growl autoUpdate="true" />
                     <div class="row card-panel">
                         <div class="input-field col s5 m15 l4">
@@ -31,16 +31,12 @@
                                 <h4>Registro de Usuarios</h4>
                             </blockquote>                           
                         </div> 
-                        
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">account_circle</i>
-                            <!--<input id="name1" type="text" name="name1" class="validate" required=""/>
-                            <label for="name1">1er Nombre(*)</label>-->
-                            <h:inputText id="name1" value="" class="validate" required="true" requiredMessage="1er nombre es requerido"/>
+                            <h:inputText id="name1" required="true" value="" requiredMessage="1er nombre es requerido" />
                             <h:outputLabel for="name1" value="1er Nombre(*)"/>
-                            <!--<span class="helper-text" data-error="1er nombre es requerido" data-success=""></span>-->
                         </div>
-                        <div class="input-field col s12 m6 l6">
+                        <!--<div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">account_circle</i>
                             <input id="name2" type="text" name="name2"/>
                             <label for="name2">2do Nombre</label>
@@ -86,23 +82,22 @@
                                 <option value="3">Evaluador</option>
                                 <option value="4">Financiador</option>
                             </select>
-                            <!--<span class="helper-text" data-error="tipo de usuario es requerido" data-success=""></span>-->
-                        </div>
+                            <span class="helper-text" data-error="tipo de usuario es requerido" data-success=""></span>
+                        </div>-->
                         <div class="input-field col s12 l6">
                             <p class="right">(*)Dato requerido</p>
                         </div> 
                         <div class="input-field col s12">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">
+                            <!--<button class="btn waves-effect waves-light" type="submit" name="action">
                                 <i class="material-icons right">input</i>Registrar Usuario
-                            </button>
+                            </button>-->
+                            <h:commandLink value="Registrar Usuario" styleClass="btn waves-effect waves-light" />
                         </div>
                         <div class="input-field col s12 l12">
                             <p class="center">¿Ya tienes cuenta?</p>
                         </div>                        
                         <div class="input-field col s12">
-                            <a class="waves-effect waves-light btn" href="index.xhtml">
-                                <i class="material-icons right">undo</i>Regresar
-                            </a>
+                            <h:outputLink value="index.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>
                         </div>
                     </div>     
                 </h:form>

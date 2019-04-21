@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>ProjectPRO</title>
+        <link rel="shortcut icon" href="resources/img/LogoIcon.ico" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        <link href="resources/css/style_project.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/jquerywebui-popover.css" rel="stylesheet" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <!-- barra de navegación -->
+        <header class="header1">
+            <div class="nav1 navbar-fixed">
+                <nav> 
+                    <div class="nav-wrapper">
+                        <ul class="left">
+                            <a href="#!" class="brand-logo tooltipped" data-position="bottom" data-tooltip="ProjectPRO. Grandes ideas, grandes proyectos"><img src="resources/img/logoWBirrete5.png" alt=""/></a>
+                            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                            <a href="#" class="menu waves-effect hide-on-med-and-down" id="menu-toggle"><i class="material-icons">menu</i></a>
+                        </ul>                     
+                        <div class="search hide-on-med-and-down">
+                            <form id="navbarsearch" class="" method="post">    
+                                <div class="input-field">
+                                    <input id="search" type="search" name="search" placeholder="Buscar"/>
+                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>                    
+                        </div>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li class="waves-effect waves-light"><a href="#"><i class="material-icons left">home</i>Inicio</a></li>
+                            <li class="waves-effect waves-light"><a href="#"><i class="material-icons left">help</i>Acerca</a></li>                     
+                            <li class="user waves-effect waves-light"><a id="login" href="#"><img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/></a></li>  
+                        </ul>
+                    </div>                                     
+                </nav>
+            </div>
+        </header>
+        <!-- fin barra de navegación -->
+        
+        <section id="general">
+            <div id="wrapper">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <div class="contenedor-menu">
+                            <ul class="menu">
+                                <li><a class="categorias"><i class="material-icons left">collections_bookmark</i>CATEGORÍAS</a></li>
+                                <li><div class="divider"></div></li>                     
+                                <li><a href="#" class="waves-effect waves-light">CATEGORÍA 1<i class="material-icons right">expand_more</i></a>
+                                    <ul>
+                                        <li><a href="#">Item 1</a></li>
+                                        <li><a href="#">Item 2</a></li>
+                                        <li><a href="#">Item 3</a></li>
+                                        <li><a href="#">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="waves-effect waves-light">CATEGORÍA 2<i class="material-icons right">expand_more</i></a>
+                                    <ul>
+                                        <li><a href="#">Item 1</a></li>
+                                        <li><a href="#">Item 2</a></li>
+                                        <li><a href="#">Item 3</a></li>
+                                        <li><a href="#">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="waves-effect waves-light">CATEGORÍA 3<i class="material-icons right">expand_more</i></a>
+                                    <ul>
+                                        <li><a href="#">Item 1</a></li>
+                                        <li><a href="#">Item 2</a></li>
+                                        <li><a href="#">Item 3</a></li>
+                                        <li><a href="#">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="waves-effect waves-light">CATEGORÍA 4<i class="material-icons right">expand_more</i></a>
+                                    <ul>
+                                        <li><a href="#">Item 1</a></li>
+                                        <li><a href="#">Item 2</a></li>
+                                        <li><a href="#">Item 3</a></li>
+                                        <li><a href="#">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="waves-effect waves-light">CATEGORÍA 5<i class="material-icons right">expand_more</i></a>
+                                    <ul>
+                                        <li><a href="#">Item 1</a></li>
+                                        <li><a href="#">Item 2</a></li>
+                                        <li><a href="#">Item 3</a></li>
+                                        <li><a href="#">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="waves-effect waves-light">CATEGORÍA 6<i class="material-icons right">expand_more</i></a>
+                                    <ul>
+                                        <li><a href="#">Item 1</a></li>
+                                        <li><a href="#">Item 2</a></li>
+                                        <li><a href="#">Item 3</a></li>
+                                        <li><a href="#">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><div class="divider"></div></li>   
+                                <li><a href="#" class="waves-effect waves-light">PUBLICACIÓN<i class="material-icons right">expand_more</i></a>
+                                    <ul>
+                                        <li><a href="projects_registration.xhtml">Registrar Proyecto<i class="material-icons left">book</i></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+                <!-- fin sidebar -->
+
+                <!-- cuerpo principal -->
+                <main class="main">
+
+                    <!-- contenido -->
+                    <section id="contenido">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col s12 m12 l12">
+                                    <blockquote>
+                                        <h4>Detalles de la publicación</h4> 
+                                    </blockquote>
+                                </div>
+                                <div class="col s6 m4 l3">
+                                    <div class="">
+                                        <img src="resources/img/portada.jpg" class="responsive-img" alt=""/>
+                                    </div>
+                                </div>
+                                <div class="col s6 m4 l9">
+                                    <div class="">
+                                        <h4>Titulo del proyecto:</h4>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                        <h4>Autor/es:</h4>
+                                        <p>Autor 1:</p>
+                                        <p>Autor 2:</p>
+                                        <p>Autor 3:</p>
+                                        <p>Autor 4:</p>
+                                        <h4>Tipo de licencia:</h4>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                        <h4>Descripción:</h4>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- fin contenido -->
+                    
+                </main>
+                <!-- fin cuerpo principal -->
+                
+                <!-- footer -->
+                <footer class="page-footer blue-grey darken-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col l6 s12">
+                                <h5 class="white-text">ProjectPRO</h5>
+                                <p class="grey-text text-lighten-4">Grandes proyectos, grandes ideas.</p>
+                            </div>
+                            <div class="col l4 offset-l2 s12">
+                                © ProjectPRO - Grupo PA Sem VI Sec9 2019-1 <br></br>
+                        @sguevara @rdtorres @jlmacias @lserna
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-copyright blue-grey darken-4 valign-wrapper">
+                        <div class="container">
+                            Crea tu proyecto de negocio a partir de tus ideas y marca la diferencia
+                            <br></br>
+                            © 2014 Copyright Text
+                        </div>
+                    </div>
+                </footer>
+                <!-- fin footer -->
+                
+            </div>
+        </section>       
+        
+        <!-- inicio sidebar movil -->
+        <section id="menu-lateral-movil">
+            <ul id="slide-out" class="sidenav">
+                <div class="contenedor-menu2">
+                    <li>
+                        <div class="user-view">
+                            <div class="background">
+                                <img src="resources/img/md1.png" class="responsive-img"/>
+                            </div>
+                            <a href="#user"><img class="circle" src="resources/img/user_photo.png"/></a>
+                            <span class="name">John Doe</span>
+                            <span class="email">jdandturk@gmail.com</span>
+                        </div>
+                    </li>
+                    <li class="search">
+                        <div class="input-field">
+                            <div class="search-wrapper"> 
+                                <i class="material-icons prefix">search</i>
+                                <input id="search" type="search" placeholder="Buscar"/>  
+                            </div>
+			</div>                        
+                    </li>
+                    <li><div class="divider"></div></li>
+                    <ul class="menu2">
+                        <li><a class="categorias2 subheader"><i class="material-icons left">collections_bookmark</i>CATEGORÍAS</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 1<i class="material-icons right">expand_more</i></a>
+                            <ul>
+                                <li><a href="#">Item 1</a></li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 2<i class="material-icons right">expand_more</i></a>
+                            <ul>
+                                <li><a href="#">Item 1</a></li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 3<i class="material-icons right">expand_more</i></a>
+                            <ul>
+                                <li><a href="#">Item 1</a></li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 4<i class="material-icons right">expand_more</i></a>
+                            <ul>
+                                <li><a href="#">Item 1</a></li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 5<i class="material-icons right">expand_more</i></a>
+                            <ul>
+                                <li><a href="#">Item 1</a></li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 6<i class="material-icons right">expand_more</i></a>
+                            <ul>
+                                <li><a href="#">Item 1</a></li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </li>                        
+                        <li><div class="divider"></div></li>
+                        <li><a href="#" class="waves-effect waves-light">Inicio<i class="material-icons left">home</i></a></li>
+                        <li><a href="#" class="waves-effect waves-light">Acerca<i class="material-icons left">help</i></a></li>
+                        <li><a href="projects_registration.xhtml" class="waves-effect waves-light">Registrar Proyecto<i class="material-icons left">book</i></a></li>
+                        <li><a href="update_user_data.xhtml" class="waves-effect waves-light">Actualizar Usuario<i class="material-icons left">autorenew</i></a></li>
+                        <li><a href="#" class="waves-effect waves-light">Cerrar Sesión<i class="material-icons left">do_not_disturb_alt</i></a></li>
+                    </ul>  
+                </div>
+            </ul>
+        </section>
+        <!-- fin sidebar movil -->
+        
+        <!-- login desplegable -->
+        <div id="login-form" class="webui-popover-content">
+            <div class="row desplegable">
+                <form class="col s12 m12 l12" action="" method="post">
+                    <div class="input-field center">                        
+                        <img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/>                        
+                    </div>
+                    <div class="input-field center">
+                        <span class="black-text name">John Doe</span>
+                        <br></br>
+                        <span class="black-text email">jdandturk@gmail.com</span>
+                    </div>
+                    <div class="input-field">
+                        <a class="waves-effect waves-light btn" href="update_user_data.xhtml">
+                            <i class="material-icons right">autorenew</i>Actualizar Datos
+                        </a>
+                    </div>
+                    <div class="input-field">
+                        <a class="waves-effect waves-light btn" href="user_registration.xhtml">
+                            <i class="material-icons right">do_not_disturb_alt</i>Cerrar Sesión
+                        </a>
+                    </div>  
+                </form>
+            </div> 
+        </div>
+        <!-- fin login desplegable -->
+        
+        <!-- boton up -->
+        <div class="up">
+            <a class="btn-floating btn-large waves-effect waves-light z-depth-3 #00b8d4 cyan accent-4"><i class="material-icons">expand_less</i></a>
+        </div>
+        <!-- fin boton up -->
+        
+        <script src="resources/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="resources/js/materialize.min.js" type="text/javascript"></script>
+        <script src="resources/js/jquerywebui-popover.js" type="text/javascript"></script>
+        <script src="resources/js/scripts.js" type="text/javascript"></script>
+        
+    </h:body>
+</html>
+
