@@ -43,6 +43,15 @@ $(".toggle-password").click(function() {
 });
 /***************************************/
 
+/********** limitar textarea **********/
+$('textarea.max').keyup(function() {
+    var $textarea = $(this);
+    var max = 255;
+    if ($textarea.val().length > max) {
+        $textarea.val($textarea.val().substr(0, max));
+    }
+});
+/**************************************/
 /********** datepicker fecha **********/
 //$(document).ready(function(){
 //    $('.datepicker').datepicker({

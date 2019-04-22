@@ -110,8 +110,11 @@
                                     </div>
                                     <div class="input-field col s12 l8 offset-l2">
                                         <i class="material-icons prefix">create</i>
-                                        <h:inputTextarea id="descripcion" required="true" value="" requiredMessage="Descripción es requerida" />
+                                        <h:inputTextarea id="descripcion" required="true" value="" requiredMessage="Descripción es requerida" styleClass="max" />
                                         <h:outputLabel for="descripcion" value="Descripción(*)"/>
+                                    </div>
+                                    <div class="input-field col s12 l8 offset-l2">
+                                        <p class="right">Descripción debe contener máximo 255 caracteres</p>
                                     </div>
                                     <div class="input-field col s12 l4 offset-l2">
                                         <h:commandLink value="Registrar proyecto" styleClass="btn waves-effect waves-light" />
