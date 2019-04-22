@@ -24,7 +24,7 @@
                             <div id="profile-container">
                                 <image id="profileImage" src="resources/img/user_photo.png" class="tooltipped responsive-img" data-tooltip="Click para agregar tu foto de perfil"/>
                             </div>
-                            <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" accept="image/*" capture=""/>
+                            <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" accept="image/*" capture=""/>
                         </div>
                         <div class="input-field col s7 m17 l7">
                             <blockquote>
@@ -55,12 +55,12 @@
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">email</i>
                             <h:inputText id="email" required="true" value="" requiredMessage="Correo Electronico es requerido" />
-                            <h:outputLabel for="email" value="Correo Electronico"/>
+                            <h:outputLabel for="email" value="Correo Electronico(*)"/>
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">lock</i>
                             <h:inputSecret id="password" required="true" value="password" requiredMessage="Contraseña es requerida" />
-                            <h:outputLabel for="password" value="Contraseña"/>
+                            <h:outputLabel for="password" value="Contraseña(*)"/>
                             <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         </div>
                         <div class="input-field col s12 m6 l6">
