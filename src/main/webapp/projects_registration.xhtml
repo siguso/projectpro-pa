@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>ProjectPRO</title>
         <link rel="shortcut icon" href="resources/img/LogoIcon.ico" />
@@ -48,44 +50,41 @@
                                     <h6>(*)Dato requerido</h6>
                                 </blockquote>
                             </div>     
-                            <form class="col s12 m12 l10 offset-l1">
+                            <h:form class="col s12 m12 l10 offset-l1">
+                                <p:growl autoUpdate="true" />
                                 <div class="row">                                                                                                                                        
                                     <div class="input-field col s12 m6 l4 offset-l2">
                                         <i class="material-icons prefix">title</i>
-                                        <input id="title" type="text" name="title" class="validate" required=""/>
-                                        <label for="title">Titulo(*)</label>
-                                        <span class="helper-text" data-error="titulo es requerido" data-success=""></span>
+                                        <h:inputText id="title" required="true" value="" requiredMessage="Titulo es requerido" />
+                                        <h:outputLabel for="title" value="Titulo(*)"/>
                                     </div>
                                     <div class="input-field col s12 m6 l4"> 
                                         <i class="material-icons prefix">group</i>
-                                        <select multiple="" name="usuario" id="usuario" class="validate" required="">
-                                            <option value="" disabled="">Autor/es(*)</option>
-                                            <option value="1">Autor</option>
-                                            <option value="2">Autor</option>
-                                            <option value="3">Autor</option>
-                                            <option value="4">Autor</option>
-                                        </select>
-                                        <span class="helper-text" data-error="" data-success=""></span>
+                                        <h:selectOneMenu value="" id="autor" required="true" requiredMessage="Autor es requerido"> 
+                                            <f:selectItem itemValue = "" itemLabel = "Autor/es(*)" /> 
+                                            <f:selectItem itemValue = "1" itemLabel = "Autor 1" />
+                                            <f:selectItem itemValue = "2" itemLabel = "Autor 2" /> 
+                                            <f:selectItem itemValue = "3" itemLabel = "Autor 3" /> 
+                                            <f:selectItem itemValue = "4" itemLabel = "Autor 4" /> 
+                                        </h:selectOneMenu> 
                                     </div>
                                     <div class="input-field col s12 m6 l4 offset-l2">  
                                         <i class="material-icons prefix">verified_user</i>
-                                        <select name="licencia" id="licencia" class="validate" required="">
-                                            <option value="" disabled="" selected="">Tipo Licencia(*)</option>
-                                            <option value="1">Libre</option>
-                                            <option value="2">Privada</option>
-                                        </select>
-                                        <span class="helper-text" data-error="" data-success=""></span>
+                                        <h:selectOneMenu value="" id="licencia" required="true" requiredMessage="Tipo de licencia es requerida"> 
+                                            <f:selectItem itemValue = "" itemLabel = "Tipo de Licencia(*)" /> 
+                                            <f:selectItem itemValue = "1" itemLabel = "Libre" />
+                                            <f:selectItem itemValue = "2" itemLabel = "Privada" /> 
+                                        </h:selectOneMenu> 
                                     </div>
                                     <div class="input-field col s12 m6 l4">
                                         <i class="material-icons prefix">collections_bookmark</i>
-                                        <select multiple="" name="usuario" id="usuario" class="validate" required="">
-                                            <option value="" disabled="">Categorias(*)</option>
-                                            <option value="1">Categorias</option>
-                                            <option value="2">Categorias</option>
-                                            <option value="3">Categorias</option>
-                                            <option value="4">Categorias</option>
-                                        </select>
-                                        <span class="helper-text" data-error="" data-success=""></span>
+                                        <h:selectOneMenu value="" id="categorias" required="true" requiredMessage="Categoria es requerida"> 
+                                            <f:selectItem itemValue = "" itemLabel = "Categorias(*)" /> 
+                                            <f:selectItem itemValue = "1" itemLabel = "Categoria 1" />
+                                            <f:selectItem itemValue = "2" itemLabel = "Categoria 2" /> 
+                                            <f:selectItem itemValue = "3" itemLabel = "Categoria 3" /> 
+                                            <f:selectItem itemValue = "4" itemLabel = "Categoria 4" /> 
+                                        </h:selectOneMenu> 	
                                     </div>
                                     <div class="input-field col s12 m6 l4 offset-l2">
                                         <div class="file-field input-field">
@@ -102,7 +101,7 @@
                                         <div class="file-field input-field">
                                             <div class="btn archivo">
                                                 <span>pdf</span>
-                                                <input type="file" name="pdf[]" accept="application/pdf" required=""/>
+                                                <input type="file" name="pdf[]" accept="application/pdf" />
                                             </div>
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" name="pdf[]" placeholder="Selecciona un archivo(*)" type="text"/>
@@ -111,21 +110,17 @@
                                     </div>
                                     <div class="input-field col s12 l8 offset-l2">
                                         <i class="material-icons prefix">create</i>
-                                        <textarea id="textarea" class="materialize-textarea validate" data-length="120" required=""></textarea>
-                                        <label for="textarea">Descripción(*)</label>
+                                        <h:inputTextarea id="descripcion" required="true" value="" requiredMessage="Descripción es requerida" />
+                                        <h:outputLabel for="descripcion" value="Descripción(*)"/>
                                     </div>
                                     <div class="input-field col s12 l4 offset-l2">
-                                        <button class="btn waves-effect waves-light" type="submit" name="action">
-                                            <i class="material-icons right">input</i>Registrar Proyecto
-                                        </button>
+                                        <h:commandLink value="Registrar proyecto" styleClass="btn waves-effect waves-light" />
                                     </div>
                                     <div class="input-field col s12 l4">
-                                        <a class="waves-effect waves-light btn" href="projects.xhtml">
-                                            <i class="material-icons right">undo</i>Regresar
-                                        </a>
+                                        <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>
                                     </div>
                                 </div>     
-                            </form>
+                            </h:form>
                         </div>
                     </div>
                 </section>
