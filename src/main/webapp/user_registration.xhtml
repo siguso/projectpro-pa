@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:p="http://primefaces.org/ui">
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>ProjectPRO</title>
         <link rel="shortcut icon" href="resources/img/LogoIcon.ico" />
@@ -16,7 +17,7 @@
     <h:body>
         <div class="section register container">
             <div class="row forms">
-                <h:form id="login-form" class="col s12 m9 l8 offset-l2 offset-m2">
+                <h:form class="col s12 m9 l8 offset-l2 offset-m2">
                     <p:growl autoUpdate="true" />
                     <div class="row card-panel">
                         <div class="input-field col s5 m15 l4">
@@ -38,53 +39,46 @@
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="name2" type="text" name="name2"/>
-                            <label for="name2">2do Nombre</label>
-                            <span class="helper-text" data-error="" data-success=""></span>
+                            <h:inputText id="name2" required="" value="" requiredMessage="" />
+                            <h:outputLabel for="name2" value="2do Nombre"/>
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="lastname1" type="text" name="lastname1" class="validate" required=""/>
-                            <label for="lastname1">1er Apellido(*)</label>
-                            <span class="helper-text" data-error="1er apellido es requerido" data-success=""></span>
+                            <h:inputText id="lastname1" required="true" value="" requiredMessage="1er apellido es requerido" />
+                            <h:outputLabel for="lastname1" value="1er Apellido(*)"/>
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="lastname2" type="text" name="lastname2"/>
-                            <label for="lastname2">2do Apellido</label>
-                            <span class="helper-text" data-error="" data-success=""></span>
+                            <h:inputText id="lastname2" required="" value="" requiredMessage="" />
+                            <h:outputLabel for="lastname2" value="2do Apellido"/>
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">email</i>
-                            <input id="email" type="email" name="email" class="validate" required=""/>
-                            <label for="email">Correo Electronico(*)</label>
-                            <span class="helper-text" data-error="correo no valido" data-success="correo valido"></span>
+                            <h:inputText id="email" required="true" value="" requiredMessage="Correo Electronico es requerido" />
+                            <h:outputLabel for="email" value="Correo Electronico"/>
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">lock</i>
-                            <input id="password" type="password" name="password" class="validate" required=""/>
-                            <label for="password">Contraseña(*)</label>
+                            <h:inputSecret id="password" required="true" value="password" requiredMessage="Contraseña es requerida" />
+                            <h:outputLabel for="password" value="Contraseña"/>
                             <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                            <span class="helper-text" data-error="contraseña es requerida" data-success=""></span>
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <i class="material-icons prefix">phone</i>
-                            <input id="phone" type="tel" name="phone" class="validate" required=""/>
-                            <label for="phone">Número Celular(*)</label>
-                            <span class="helper-text" data-error="número celular es requerido" data-success=""></span>
+                            <h:inputText id="phone" required="true" value="" requiredMessage="número celular es requerido" />
+                            <h:outputLabel for="phone" value="Número Celular(*)"/>
                         </div>
                         <div class="input-field col s11 m6 l6">  
                             <i class="material-icons prefix">group</i>
-                            <select name="usuario" id="usuario" class="validate" required="">
-                                <option value="" selected="">Tipo de Usuario(*)</option>
-                                <option value="1">Lector</option>
-                                <option value="2">Autor</option>
-                                <option value="3">Evaluador</option>
-                                <option value="4">Financiador</option>
-                            </select>
-                            <span class="helper-text" data-error="tipo de usuario es requerido" data-success=""></span>
+                            <h:selectOneMenu value="" required="true" requiredMessage="tipo de usuario es requerido"> 
+                               <f:selectItem itemValue = "" itemLabel = "Tipo de Usuario(*)" /> 
+                               <f:selectItem itemValue = "1" itemLabel = "Lector" />
+                               <f:selectItem itemValue = "2" itemLabel = "Autor" /> 
+                               <f:selectItem itemValue = "3" itemLabel = "Evaluador" /> 
+                               <f:selectItem itemValue = "4" itemLabel = "Financiador" /> 
+                            </h:selectOneMenu> 			
                         </div>
-                        <div class="input-field col s12 l6">
+                        <div class="input-field col s12 l12">
                             <p class="right">(*)Dato requerido</p>
                         </div> 
                         <div class="input-field col s12">
