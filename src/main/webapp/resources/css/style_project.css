@@ -458,6 +458,13 @@ body{
 }
 /**********************************/
 
+/********** titulos **********/
+#publi{
+    border-bottom-style: dashed; 
+    border-width: 1px; 
+}
+/*****************************/
+
 /********** scrollbar **********/
 *::-webkit-scrollbar {
 	width: 10px;
