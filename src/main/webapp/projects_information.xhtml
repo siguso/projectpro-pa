@@ -118,75 +118,83 @@
 
                     <!-- contenido -->
                     <section id="contenido">
-                        <div class="container-fluid">
-                            <div class="row">
+                        <div class="section container-fluid">
+                            <div class="row forms">
                                 <div class="col s12 m12 l12">
                                     <blockquote>
                                         <h4>Publicación</h4> 
                                     </blockquote>
                                 </div>
-                                <div class="col s6 m4 l3">
-                                    <img src="resources/img/portada.jpg" class="responsive-img" alt=""/>
-                                </div>
-                                <div class="col s6 m8 l9">
-                                    <h4>Titulo del proyecto</h4>
-                                </div>
-                                <div class="col s3 m4 l4">
-                                    <p>Autor 1:</p>
-                                    <p>Autor 2:</p>
-                                    <p>Autor 3:</p>
-                                    <p>Autor 4:</p>
-                                </div>
-                                <div class="col s3 m4 l5">
-                                    <p>John Doe</p>
-                                    <p>John Doe</p>
-                                    <p>John Doe</p>
-                                    <p>John Doe</p>
-                                </div>
-                                <div class="col s7 m7 l3">
-                                    <br></br>
-                                    <div class="vote_bar">
-                                        <div class="vote_progress"></div>
+                                <h:form class="">
+                                    <div class="col s6 m4 l3">
+                                        <img src="resources/img/portada.jpg" class="responsive-img" alt=""/>
                                     </div>
-                                    <div class="vote_btns">
-                                        <button class="vote_btn vote_like"><i class="material-icons">thumb_up</i> 0</button>
-                                        <button class="vote_btn vote_dislike"><i class="material-icons">thumb_down</i> 0</button>
-                                        <!--<h:commandLink value="Registrar proyecto" styleClass="btn" class="vote_btn vote_dislike"><i class="material-icons">thumb_down</i> 0</h:commandLink>-->
-                                    </div>                                            
-                                </div>
-                                <br></br>
-                                <br></br>
-                                <div>
+                                    <div class="col s6 m8 l9">
+                                        <h4>Titulo del proyecto</h4>
+                                    </div>
+                                    <div class="col s3 m4 l4">
+                                        <p>Autor 1:</p>
+                                        <p>Autor 2:</p>
+                                        <p>Autor 3:</p>
+                                        <p>Autor 4:</p>
+                                    </div>
+                                    <div class="col s3 m4 l5">
+                                        <p>John Doe</p>
+                                        <p>John Doe</p>
+                                        <p>John Doe</p>
+                                        <p>John Doe</p>
+                                    </div>
+                                    <div class="col s7 m7 l3">
+                                        <br></br>
+                                        <div class="vote_bar">
+                                            <div class="vote_progress"></div>
+                                        </div>
+                                        <div class="vote_btns">
+                                            <button class="vote_btn vote_like"><i class="material-icons">thumb_up</i> 0</button>
+                                            <button class="vote_btn vote_dislike"><i class="material-icons">thumb_down</i> 0</button>
+                                            <!--<h:commandLink value="Registrar proyecto" styleClass="btn" class="vote_btn vote_dislike"><i class="material-icons">thumb_down</i> 0</h:commandLink>-->
+                                        </div>                                            
+                                    </div>
+                                    <br></br>
+                                    <br></br>
+                                    <div>
+                                        <div class="col s12 m12 l9" id="publi">
+                                            <h5>Detalles del proyecto:</h5>
+                                        </div>
+                                        <div class="col s6 m6 l4">
+                                            <br></br>
+                                            <p>Año:</p>
+                                            <p>Páginas:</p>
+                                            <p>Idioma:</p>
+                                            <p>Tamaño:</p>
+                                            <p>Licencia:</p>
+                                        </div>
+                                        <div class="col s6 m6 l5">
+                                            <br></br>
+                                            <p>2019</p>
+                                            <p>160</p>
+                                            <p>Español</p>
+                                            <p>2.76 MB</p>
+                                            <p>Publica</p>
+                                        </div>
+                                    </div>
+                                    <br></br>
                                     <div class="col s12 m12 l9" id="publi">
-                                        <h5>Detalles del proyecto:</h5>
-                                    </div>
-                                    <div class="col s6 m6 l4">
                                         <br></br>
-                                        <p>Año:</p>
-                                        <p>Páginas:</p>
-                                        <p>Idioma:</p>
-                                        <p>Tamaño:</p>
-                                        <p>Licencia:</p>
+                                        <h5>Descripción:</h5>
                                     </div>
-                                    <div class="col s6 m6 l5">
+                                    <div class="col s12 m12 l9"> 
                                         <br></br>
-                                        <p>2019</p>
-                                        <p>160</p>
-                                        <p>Español</p>
-                                        <p>2.76 MB</p>
-                                        <p>Publica</p>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.
+                                        Here is some more information about this product that is only revealed once clicked on.</p>
                                     </div>
-                                </div>
-                                <br></br>
-                                <div class="col s12 m12 l9" id="publi">
-                                    <br></br>
-                                    <h5>Descripción:</h5>
-                                </div>
-                                <div class="col s12 m12 l9"> 
-                                    <br></br>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.
-                                    Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
+                                    <div class="input-field col s12 l4 offset-l3">
+                                        <h:commandLink value="Contactar con el autor/es" styleClass="btn waves-effect waves-light" />
+                                    </div>
+                                    <div class="input-field col s12 l4">
+                                        <h:outputLink value="projects_reader.xhtml" styleClass="btn waves-effect waves-light">leer proyecto</h:outputLink>
+                                    </div>
+                                </h:form>
                             </div>
                         </div>
                     </section>
