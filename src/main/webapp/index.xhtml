@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>ProjectPRO</title>
         <link rel="shortcut icon" href="resources/img/LogoIcon.ico" />
@@ -34,14 +35,16 @@
                                 </div>                  
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">email</i>
-                                    <h:inputText id="email" required="true" value="" requiredMessage="Correo Electronico es requerido" />
+                                    <h:inputText id="email" required="true" value="" requiredMessage="Correo Electronico es requerido" validatorMessage="Correo no valido">
+                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                    </h:inputText>
                                     <h:outputLabel for="email" value="Correo Electronico"/>
                                 </div>
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">lock</i>                    
                                     <h:inputSecret id="password" required="true" value="password" requiredMessage="Contraseña es requerida" />
                                     <h:outputLabel for="password" value="Contraseña"/>
-                                    <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                    <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password" />
                                 </div>
                                 <div class="input-field col s6 checkbox">
                                     <p>
