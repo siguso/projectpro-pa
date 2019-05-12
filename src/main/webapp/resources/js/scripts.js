@@ -30,6 +30,12 @@ $(document).ready(function(){
     $('.modal').modal();
 });
 
+/********** limpiar campos **********/
+function limpiarForm(){
+    document.getElementById("formulario").reset();
+}
+/************************************/
+
 /********** hide/show password **********/
 $(".toggle-password").click(function() {
 

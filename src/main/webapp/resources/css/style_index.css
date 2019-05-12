@@ -174,10 +174,15 @@ header.topbar{
     top: 0;
     left: 0;
 }
+header.topbar .right{
+    font-size: 1.5em;
+}
 header .logo{
-    width: 200px;
-    height: 200px;
-    margin-left: 60px;
+    /*width: 200px;
+    height: 200px;*/
+    width: 14em;
+    height: 14em;
+    margin-left: 50px;
     margin-top: 22px;
 }
 header .right{

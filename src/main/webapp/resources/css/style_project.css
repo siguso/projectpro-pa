@@ -21,6 +21,14 @@ body{
 }
 /***************************/
 
+/********** feedback **********/
+/*.ui-password-panel-overlay{ 
+    background: #00abc5;
+    opacity: 1;
+    border: none;
+}*/
+/******************************/
+
 /********** header1 **********/
 .nav1 .nav-wrapper{
     background-color: #333333;

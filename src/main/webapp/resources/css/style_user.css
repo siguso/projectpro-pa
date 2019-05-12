@@ -26,6 +26,14 @@ body{
 }
 /***************************/
 
+/********** feedback **********/
+/*.ui-password-panel-overlay{ 
+    background: #00abc5;
+    opacity: 1;
+    border: none;
+}*/
+/******************************/
+
 /********** text box **********/
 /* label color */
 .section .forms label{

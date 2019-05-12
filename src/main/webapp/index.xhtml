@@ -35,14 +35,14 @@
                                 </div>                  
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">email</i>
-                                    <h:inputText id="email" required="true" value="" requiredMessage="Correo Electronico es requerido" validatorMessage="Correo no valido">
+                                    <h:inputText id="email" required="true" value="#{indexController.usuario.email}" requiredMessage="Correo Electronico es requerido" validatorMessage="Correo no valido">
                                         <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
                                     </h:inputText>
                                     <h:outputLabel for="email" value="Correo Electronico"/>
                                 </div>
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">lock</i>                    
-                                    <h:inputSecret id="password" required="true" value="password" requiredMessage="Contraseña es requerida" />
+                                    <h:inputSecret id="password" required="true" value="#{indexController.usuario.pass}" requiredMessage="Contraseña es requerida"  />
                                     <h:outputLabel for="password" value="Contraseña"/>
                                     <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password" />
                                 </div>
@@ -58,7 +58,7 @@
                                     <a href="password_recovery.xhtml">Has olvidado tu contraseña?</a>
                                 </div>
                                 <div class="input-field col s12">
-                                    <h:commandLink value="INGRESAR" styleClass="btn waves-effect waves-light" />
+                                    <h:commandLink value="INGRESAR" styleClass="btn waves-effect waves-light" action="#{indexController.iniciarSesion()}" />
                                 </div>
                                 <div class="input-field col s12">
                                     <p class="center">¿Aún no tienes cuenta?</p>
@@ -73,7 +73,7 @@
                 <!-- fin sidebar -->
                 
                 <header class="topbar"> 
-                    <a href="#"><img class=" logo responsive-img" src="resources/img/logoWBirrete5.png"/></a>
+                    <a href="#"><img class="logo responsive-img" src="resources/img/logoWBirrete5.png" /></a>
                     <h5 class="right">
                         <a class="white-text hide-on-large-only" href="" id="menu-toggle2">
                             Iniciar Sesión
@@ -120,69 +120,6 @@
                 </main>
                 <!-- fin cuerpo principal --> 
                 
-                <!-- footer -->
-                <footer class="page-footer blue-grey darken-3">
-                    <!--<div class="container">
-                        <div class="row">
-                            <div class="col l6 s12">
-                                <h5 class="white-text">ProjectPRO</h5>
-                                <p class="grey-text text-lighten-4">Grandes ideas, grandes proyectos.</p>
-                            </div>
-                            <div class="col l4 offset-l2 s12">
-                                © ProjectPRO - Grupo PA Sem VI Sec9 2019-1 <br></br>
-                        @sguevara @rdtorres @jlmacias @lserna
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-copyright blue-grey darken-4 valign-wrapper">
-                        <div class="container">
-                            Crea tu proyecto de negocio a partir de tus ideas y marca la diferencia
-                            <br></br>
-                            © 2014 Copyright Text
-                        </div>
-                    </div>-->
-                    
-                    <div class="container center-align">
-                        <div class="row">
-                            <div class="col l3 m3 s6">
-                                <h5 class="white-text">Creación</h5>
-                                <ul>
-                                    <li><a class="grey-text text-lighten-3" href="user_registration.xhtml">Usuarios</a></li>
-                                    <li><a class="grey-text text-lighten-3" href="projects_registration.xhtml">Proyectos</a></li>
-                                </ul>
-                            </div>
-                            <div class="col l3 m3 s6">
-                                <h5 class="white-text">Visualizar</h5>
-                                <ul>
-                                    <li><a class="grey-text text-lighten-3" href="projects.xhtml">Proyectos</a></li>
-                                    <li><a class="grey-text text-lighten-3" href="admin_user.xhtml">Usuarios</a></li>
-                                </ul>
-                            </div>
-                            <div class="col l3 m3 s6">
-                                <h5 class="white-text">Actualización</h5>
-                                <ul>
-                                    <li><a class="grey-text text-lighten-3" href="update_user_data.xhtml">Usuarios</a></li>
-                                    <li><a class="grey-text text-lighten-3" href="password_recovery.xhtml">Contraseña</a></li>
-                                </ul>
-                            </div>
-                            <div class="col l3 m3 s6">
-                                <h5 class="white-text">Eliminar</h5>
-                                <ul>
-                                    <li><a class="grey-text text-lighten-3" href="admin_user.xhtml">Usuarios</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-copyright blue-grey darken-4 valign-wrapper">
-                        <div class="container">
-                            Crea tu proyecto de negocio a partir de tus ideas y marca la diferencia
-                            <br></br>
-                            © 2014 Copyright Text
-                        </div>
-                    </div>
-                </footer>
-                <!-- fin footer -->
             </div>
         </section>       
  
