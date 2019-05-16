@@ -329,6 +329,10 @@ body{
     height: 90px;
     width: 90px;
 }
+#login-form{
+    /*height: 130px;*/
+    width: 250px;
+}
 /********** boton **********/
 #login-form .btn{
     background-color: #00abc5;

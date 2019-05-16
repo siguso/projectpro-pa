@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <meta name="viewport" content="width=device-width, initial-scale=0.79"/>
@@ -13,7 +14,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-        <link href="resources/css/style_project.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/style_project.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/jquerywebui-popover.css" rel="stylesheet" type="text/css"/>
@@ -59,32 +59,36 @@
                 <!-- login desplegable -->
                 <div id="login-form" class="webui-popover-content">
                     <div class="row desplegable">
-                        <form class="col s12 m12 l12" action="" method="post">
+                        <!--<h:form class="col s12 m12 l12">
+                            <p:dataTable var="usu" value="" rows="1">
+                                <p:column headerText="Nombre" styleClass="vertAling">
+                                    <h:outputText value="" />
+                                </p:column>
+                            </p:dataTable>
+                        </h:form>-->
+                        <h:form class="col s12 m12 l12">
                             <div class="input-field center">                        
                                 <img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/>                        
                             </div>
                             <div class="input-field center">
-                                <span class="black-text name">John Doe</span>
+                                <span class="black-text name"><b>#{menuController.mostrarUsuarioLogeado()}</b></span>
                                 <br></br>
-                                <span class="black-text email">jdandturk@gmail.com</span>
+                                <span class="black-text email">#{menuController.mostrarEmailUsuarioLogeado()}</span>
                             </div>
                             <div class="input-field">
-                                <a class="waves-effect waves-light btn" href="update_user_data.xhtml">
-                                    <i class="material-icons right">autorenew</i>Actualizar Datos
-                                </a>
+                                <h:commandLink value="ACTUALIZAR DATOS" styleClass="btn waves-effect waves-light" actionListener="#{usuarioController.modificar(usuario)}" action="/update_user_data?faces-redirect=true"  />
+                                <!--<a class="modal-trigger btn waves-effect waves-light" href="#modal1">ACTUALIZAR DATOS</a>-->
                             </div>
                             <div class="input-field">
-                                <a class="waves-effect waves-light btn" href="user_registration.xhtml">
-                                    <i class="material-icons right">do_not_disturb_alt</i>Cerrar Sesión
-                                </a>
+                                <h:commandLink value="CERRAR SESIÓN" styleClass="btn waves-effect waves-light" actionListener="#{menuController.cerrarSesion()}" action="/index?faces-redirect=true"  />
                             </div>  
-                        </form>
+                        </h:form>
                     </div> 
                 </div>
                 <!-- fin login desplegable -->
             </ui:insert>
         </div>
-
+        
         <div id="content" class="center_content">
             <ui:insert name="content">
                 
@@ -95,7 +99,7 @@
             <ui:insert name="bottom">
                 <!-- footer -->
                 <footer class="page-footer blue-grey darken-3">
-                    <!--<div class="container">
+                    <div class="container">
                         <div class="row">
                             <div class="col l6 s12">
                                 <h5 class="white-text">ProjectPRO</h5>
@@ -103,38 +107,6 @@
                             </div>
                             <div class="col l4 offset-l2 s12">
                                 © ProjectPRO - Grupo PA Sem VI Sec9 2019-1 <br></br>
-                                @sguevara @rdtorres @jlmacias @lserna
-                            </div>
-                        </div>
-                    </div>-->
-                    <div class="container center-align">
-                        <div class="row">
-                            <div class="col l3 m3 s6">
-                                <h5 class="white-text">Creación</h5>
-                                <ul>
-                                    <li><a class="grey-text text-lighten-3" href="user_registration.xhtml">Usuarios</a></li>
-                                    <li><a class="grey-text text-lighten-3" href="projects_registration.xhtml">Proyectos</a></li>
-                                </ul>
-                            </div>
-                            <div class="col l3 m3 s6">
-                                <h5 class="white-text">Visualizar</h5>
-                                <ul>
-                                    <li><a class="grey-text text-lighten-3" href="projects.xhtml">Proyectos</a></li>
-                                    <li><a class="grey-text text-lighten-3" href="admin_user.xhtml">Usuarios</a></li>
-                                </ul>
-                            </div>
-                            <div class="col l3 m3 s6">
-                                <h5 class="white-text">Actualización</h5>
-                                <ul>
-                                    <li><a class="grey-text text-lighten-3" href="update_user_data.xhtml">Usuarios</a></li>
-                                    <li><a class="grey-text text-lighten-3" href="password_recovery.xhtml">Contraseña</a></li>
-                                </ul>
-                            </div>
-                            <div class="col l3 m3 s6">
-                                <h5 class="white-text">Eliminar</h5>
-                                <ul>
-                                    <li><a class="grey-text text-lighten-3" href="admin_user.xhtml">Usuarios</a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>
