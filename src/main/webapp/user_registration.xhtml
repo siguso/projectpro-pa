@@ -10,19 +10,19 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-        <link href="resources/css/style_user.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/style_user_registration.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
         <div class="section register container">
             <div class="row forms">
-                <h:form id="formulario" class="col s12 m9 l8 offset-l2 offset-m2">
+                <h:form id="formulario" class="col s12 m9 l8 offset-l2 offset-m2" enctype="multipart/form-data">
                     <p:growl autoUpdate="true" />
                     <div class="row card-panel">
                         <div class="input-field col s5 m15 l4">
                             <div id="profile-container">
-                                <image id="profileImage" src="resources/img/user_photo.png" class="tooltipped responsive-img" data-tooltip="Click para agregar tu foto de perfil"/>
+                                <image id="profileImage" value="" src="resources/img/user_photo.png" class="tooltipped responsive-img" data-tooltip="Click para agregar tu foto de perfil"/>
                             </div>
                             <input id="imageUpload" value="" type="file" name="profile_photo" placeholder="Photo" accept="image/*" capture=""/>
                         </div>

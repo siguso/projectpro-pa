@@ -2,6 +2,8 @@ package com.projectpro.controller;
 
 import com.projectpro.ejb.UsuarioFacadeLocal;
 import com.projectpro.model.Usuario;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.Serializable;
 //import java.util.List;
 import javax.annotation.PostConstruct;
@@ -11,6 +13,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 //import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import org.primefaces.model.UploadedFile;
 
 @Named
 //@ViewScoped
@@ -20,6 +23,7 @@ public class UsuarioController implements Serializable {
     @EJB
     private UsuarioFacadeLocal usuarioEJB;
     private Usuario usuario;
+    private UploadedFile file;
     //private List<Usuario>usua;
 
     public Usuario getUsuario() {
@@ -28,6 +32,14 @@ public class UsuarioController implements Serializable {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public UploadedFile getFile() {
+        return file;
+    }
+
+    public void setFile(UploadedFile file) {
+        this.file = file;
     }
 
     /*public List<Usuario> getUsua() {
@@ -44,6 +56,14 @@ public class UsuarioController implements Serializable {
         //usua = usuarioEJB.findAll();
     }
     
+    public void upload(){
+        try{
+            
+        }catch(Exception e){
+            
+        }
+    }
+    
     public void registrar(){
         try{
             usuarioEJB.create(usuario);
@@ -53,10 +73,10 @@ public class UsuarioController implements Serializable {
         }
     }
     
-    public String modificar(Usuario usuario){
+    /*public String modificar(Usuario usuario){
         this.usuario = usuario;
         return "update_user_data";
-    }
+    }*/
     
     public void modificar(){
         try{
@@ -67,9 +87,5 @@ public class UsuarioController implements Serializable {
         }
     }
    
-    
-    /*public String mostrarNombre1(){
-        Usuario us =(Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
-        return us.getNom1();
-    }*/
+
 }

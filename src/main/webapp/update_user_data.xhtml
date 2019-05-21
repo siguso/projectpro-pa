@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>ProjectPRO</title>
         <link rel="shortcut icon" href="resources/img/LogoIcon.ico" />
@@ -16,231 +17,128 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <!-- barra de navegación -->
-        <header class="header1">
-            <div class="nav1 navbar-fixed">
-                <nav> 
-                    <div class="nav-wrapper">
-                        <ul class="left">
-                            <a href="#!" class="brand-logo tooltipped" data-position="bottom" data-tooltip="ProjectPRO. Grandes ideas, grandes proyectos"><img src="resources/img/logoWBirrete5.png" alt=""/></a>
-                            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                        </ul>                                             
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li class="waves-effect waves-light"><a href="projects.xhtml"><i class="material-icons left">home</i>Inicio</a></li>
-                            <li class="waves-effect waves-light"><a href="#"><i class="material-icons left">help</i>Acerca</a></li>                     
-                            <li class="user waves-effect waves-light"><a id="login" href="#"><img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/></a></li>  
-                        </ul>
-                    </div>                                     
-                </nav>
-            </div>
-        </header>
-        <!-- fin barra de navegación -->
         
-        <section id="general">
-            <!-- cuerpo principal -->
-            <main class="main">
+        <ui:composition template="WEB-INF/templates/plantilla.xhtml">
+            
+            <ui:define name="content">
+        
+                <section id="general">
+                    <!-- cuerpo principal -->
+                    <main class="main">
 
-                <!-- contenido -->
-                <section id="contenido">
-                    <div class="section container-fluid">
-                        <div class="row forms">
-                            <div class="col s12 m12 l5 offset-l1">
-                                <blockquote>
-                                    <h4>ACTUALIZAR DATOS DE USUARIO</h4>
-                                    <h6>(*)Dato requerido</h6>
-                                </blockquote>
-                            </div>     
-                            <div class="input-field col s5 m12 l5">
-                                <div id="profile-container">
-                                    <image id="profileImage" src="resources/img/user_photo.png" class="tooltipped responsive-img" data-tooltip="Click para agregar tu foto de perfil"/>
+                        <!-- contenido -->
+                        <section id="contenido">
+                            <div class="section">
+                                <div class="row forms">
+                                    <h:form id="formulario" class="col s12 m9 l8 offset-l2 offset-m2">
+                                        <p:growl autoUpdate="true" />
+                                        <div class="row">
+                                            <div class="col s12 m10 l5 offset-l2 pull-m2">
+                                                <blockquote>
+                                                    <h4>ACTUALIZAR DATOS DE USUARIO</h4>
+                                                    <h6>(*)Dato requerido</h6>
+                                                </blockquote>
+                                            </div>     
+                                            <div class="input-field col s12 m2 l3 pull-m1">
+                                                <div id="profile-container">
+                                                    <image id="profileImage" src="resources/img/user_photo.png" class="tooltipped responsive-img" data-tooltip="Click para agregar tu foto de perfil"/>
+                                                </div>
+                                                <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" accept="image/*" capture=""/>
+                                            </div>   
+                                        </div>
+                                        <br></br>
+                                        <div>
+                                            <div class="input-field col s12 m11 l4 offset-l2">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <h:inputText id="name1" required="true" value="#{usuarioController.usuario.nom1}" requiredMessage="1er nombre es requerido" />
+                                                <h:outputLabel for="name1" value="1er Nombre(*)"/>
+                                            </div>
+                                            <div class="input-field col s12 m11 l4">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <h:inputText id="name2" required="" value="#{usuarioController.usuario.nom2}" requiredMessage="" />
+                                                <h:outputLabel for="name2" value="2do Nombre"/>
+                                            </div>
+                                            <div class="input-field col s12 m11 l4 offset-l2">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <h:inputText id="lastname1" required="true" value="#{usuarioController.usuario.apell1}" requiredMessage="1er apellido es requerido" />
+                                                <h:outputLabel for="lastname1" value="1er Apellido(*)"/>
+                                            </div>
+                                            <div class="input-field col s12 m11 l4">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <h:inputText id="lastname2" required="" value="#{usuarioController.usuario.apell2}" requiredMessage="" />
+                                                <h:outputLabel for="lastname2" value="2do Apellido"/>
+                                            </div>
+                                            <div class="input-field col s12 m11 l4 offset-l2">
+                                                <i class="material-icons prefix">email</i>
+                                                <h:inputText id="email" required="true" value="#{usuarioController.usuario.email}" requiredMessage="Correo Electronico es requerido" validatorMessage="Correo no valido">
+                                                    <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                                </h:inputText>
+                                                <h:outputLabel for="email" value="Correo Electronico(*)"/>
+                                            </div>
+                                            <div class="input-field col s12 m11 l4">
+                                                <i class="material-icons prefix">lock</i>
+                                                <h:inputSecret id="password" required="true" value="#{usuarioController.usuario.pass}" requiredMessage="Contraseña es requerida"  />
+                                                <!--<p:password id="password" required="true" value="password" requiredMessage="Contraseña es requerida" feedback="true" inline="false"
+                                                        promptLabel="Nivel de Seguridad" weakLabel="Débil" strongLabel="Fuerte" goodLabel="Buena" />-->
+                                                <h:outputLabel for="password" value="Contraseña(*)"/>
+                                                <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                            </div>
+                                            <div class="input-field col s12 m11 l4 offset-l2">
+                                                <i class="material-icons prefix">phone</i>
+                                                <h:inputText id="phone" required="true" value="#{usuarioController.usuario.cel}" requiredMessage="Número celular es requerido" />
+                                                <h:outputLabel for="phone" value="Número Celular(*)"/>
+                                            </div>
+                                            <div class="input-field col s12 m11 l8 offset-l2">
+                                                <h:commandLink value="Actualizar datos de usuario" styleClass="btn waves-effect waves-light" actionListener="#{usuarioController.modificar()}" />
+                                            </div>                   
+                                            <div class="input-field col s12 m11 l8 offset-l2">
+                                                <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar a la pagina principal</h:outputLink>
+                                            </div>           
+                                        </div>     
+                                    </h:form>
                                 </div>
-                                <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" accept="image/*" capture=""/>
                             </div>
-                            <h:form class="col s12 m12 l10 offset-l1">
-                                <p:growl autoUpdate="true" />
-                                <div class="row">    
-                                    <div class="input-field col s12 m6 l4 offset-l2">
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <h:inputText id="name1" required="true" value="#{usuarioController.usuario.nom1}" requiredMessage="1er nombre es requerido" />
-                                        <h:outputLabel for="name1" value="1er Nombre(*)"/>
+                        </section>
+                        <!-- fin contenido -->                    
+
+                    </main>
+                    <!-- fin cuerpo principal -->
+
+                </section>       
+
+                <!-- inicio sidebar movil -->
+                <section id="menu-lateral-movil">
+                    <ul id="slide-out" class="sidenav">
+                        <div class="contenedor-menu2">
+                            <li>
+                                <div class="user-view">
+                                    <div class="background">
+                                        <img src="resources/img/md1.png" class="responsive-img"/>
                                     </div>
-                                    <div class="input-field col s12 m6 l4">
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <h:inputText id="name2" required="" value="#{usuarioController.usuario.nom2}" requiredMessage="" />
-                                        <h:outputLabel for="name2" value="2do Nombre"/>
-                                    </div>
-                                    <div class="input-field col s12 m6 l4 offset-l2">
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <h:inputText id="lastname1" required="true" value="#{usuarioController.usuario.apell1}" requiredMessage="1er apellido es requerido" />
-                                        <h:outputLabel for="lastname1" value="1er Apellido(*)"/>
-                                    </div>
-                                    <div class="input-field col s12 m6 l4">
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <h:inputText id="lastname2" required="" value="#{usuarioController.usuario.apell2}" requiredMessage="" />
-                                        <h:outputLabel for="lastname2" value="2do Apellido"/>
-                                    </div>
-                                    <div class="input-field col s12 m6 l4 offset-l2">
-                                        <i class="material-icons prefix">email</i>
-                                        <h:inputText id="email" required="true" value="#{usuarioController.usuario.email}" requiredMessage="Correo Electronico es requerido" validatorMessage="Correo no valido">
-                                            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-                                        </h:inputText>
-                                        <h:outputLabel for="email" value="Correo Electronico(*)"/>
-                                    </div>
-                                    <div class="input-field col s12 m6 l4">
-                                        <i class="material-icons prefix">lock</i>
-                                        <h:inputSecret id="password" required="true" value="#{usuarioController.usuario.pass}" requiredMessage="Contraseña es requerida"  />
-                                        <!--<p:password id="password" required="true" value="password" requiredMessage="Contraseña es requerida" feedback="true" inline="false"
-                                                promptLabel="Nivel de Seguridad" weakLabel="Débil" strongLabel="Fuerte" goodLabel="Buena" />-->
-                                        <h:outputLabel for="password" value="Contraseña(*)"/>
-                                        <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                                    </div>
-                                    <div class="input-field col s12 m6 l4 offset-l2">
-                                        <i class="material-icons prefix">phone</i>
-                                        <h:inputText id="phone" required="true" value="#{usuarioController.usuario.cel}" requiredMessage="Número celular es requerido" />
-                                        <h:outputLabel for="phone" value="Número Celular(*)"/>
-                                    </div>
-                                    <!--<div class="input-field col s12 m6 l4">  
-                                        <i class="material-icons prefix">group</i>
-                                        <h:selectOneMenu value="" id="tipo_user" required="true" requiredMessage="Tipo de usuario es requerido"> 
-                                            <f:selectItem itemValue = "" itemLabel = "Tipo de Usuario(*)" /> 
-                                            <f:selectItem itemValue = "1" itemLabel = "Lector" />
-                                            <f:selectItem itemValue = "2" itemLabel = "Autor" /> 
-                                            <f:selectItem itemValue = "3" itemLabel = "Evaluador" /> 
-                                            <f:selectItem itemValue = "4" itemLabel = "Financiador" /> 
-                                        </h:selectOneMenu> 	
-                                    </div>-->
-                                    <div class="input-field col s12 l12">
-                                        <h:commandLink value="Actualizar datos de usuario" styleClass="btn waves-effect waves-light" actionListener="#{usuarioController.modificar()}" />
-                                    </div>                   
-                                    <div class="input-field col s12 l12">
-                                        <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar a la pagina principal</h:outputLink>
-                                    </div>
-                                </div>     
-                            </h:form>
+                                    <a href="#user"><img class="circle" src="resources/img/user_photo.png"/></a>
+                                    <span class="name">John Doe</span>
+                                    <span class="email">jdandturk@gmail.com</span>
+                                </div>
+                            </li>               
+                            <ul class="menu2">
+                                <li><a href="projects.xhtml" class="waves-effect waves-light">Inicio<i class="material-icons left">home</i></a></li>
+                                <li><a href="#" class="waves-effect waves-light">Acerca<i class="material-icons left">help</i></a></li>                       
+                                <li><a href="#" class="waves-effect waves-light">Cerrar Sesión<i class="material-icons left">do_not_disturb_alt</i></a></li>
+                            </ul>  
                         </div>
-                    </div>
+                    </ul>
                 </section>
-                <!-- fin contenido -->                    
-                    
-            </main>
-            <!-- fin cuerpo principal -->
+                <!-- fin sidebar movil -->
 
-            <!-- footer -->
-            <footer class="page-footer blue-grey darken-3">
-                <!--<div class="container">
-                    <div class="row">
-                        <div class="col l6 s12">
-                            <h5 class="white-text">ProjectPRO</h5>
-                            <p class="grey-text text-lighten-4">Grandes ideas, grandes proyectos.</p>
-                        </div>
-                        <div class="col l4 offset-l2 s12">
-                            © ProjectPRO - Grupo PA Sem VI Sec9 2019-1 <br></br>
-                            @sguevara @rdtorres @jlmacias @lserna
-                        </div>
-                    </div>
-                </div>-->
-                <div class="container center-align">
-                    <div class="row">
-                        <div class="col l3 m3 s6">
-                            <h5 class="white-text">Creación</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="user_registration.xhtml">Usuarios</a></li>
-                                <li><a class="grey-text text-lighten-3" href="projects_registration.xhtml">Proyectos</a></li>
-                            </ul>
-                        </div>
-                        <div class="col l3 m3 s6">
-                            <h5 class="white-text">Visualizar</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="projects.xhtml">Proyectos</a></li>
-                                <li><a class="grey-text text-lighten-3" href="admin_user.xhtml">Usuarios</a></li>
-                            </ul>
-                        </div>
-                        <div class="col l3 m3 s6">
-                            <h5 class="white-text">Actualización</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="update_user_data.xhtml">Usuarios</a></li>
-                                <li><a class="grey-text text-lighten-3" href="password_recovery.xhtml">Contraseña</a></li>
-                            </ul>
-                        </div>
-                        <div class="col l3 m3 s6">
-                            <h5 class="white-text">Eliminar</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="admin_user.xhtml">Usuarios</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- boton up -->
+                <div class="up">
+                    <a class="btn-floating btn-large waves-effect waves-light z-depth-3 #00b8d4 cyan accent-4 pulse"><i class="material-icons">expand_less</i></a>
                 </div>
+                <!-- fin boton up -->
+        
+            </ui:define>
 
-                <div class="footer-copyright blue-grey darken-4 valign-wrapper">
-                    <div class="container">
-                        Crea tu proyecto de negocio a partir de tus ideas y marca la diferencia
-                        <br></br>
-                        © 2014 Copyright Text
-                    </div>
-                </div>
-            </footer>
-            <!-- fin footer -->
-                
-        </section>       
-        
-        <!-- inicio sidebar movil -->
-        <section id="menu-lateral-movil">
-            <ul id="slide-out" class="sidenav">
-                <div class="contenedor-menu2">
-                    <li>
-                        <div class="user-view">
-                            <div class="background">
-                                <img src="resources/img/md1.png" class="responsive-img"/>
-                            </div>
-                            <a href="#user"><img class="circle" src="resources/img/user_photo.png"/></a>
-                            <span class="name">John Doe</span>
-                            <span class="email">jdandturk@gmail.com</span>
-                        </div>
-                    </li>               
-                    <ul class="menu2">
-                        <li><a href="projects.xhtml" class="waves-effect waves-light">Inicio<i class="material-icons left">home</i></a></li>
-                        <li><a href="#" class="waves-effect waves-light">Acerca<i class="material-icons left">help</i></a></li>                       
-                        <li><a href="#" class="waves-effect waves-light">Cerrar Sesión<i class="material-icons left">do_not_disturb_alt</i></a></li>
-                    </ul>  
-                </div>
-            </ul>
-        </section>
-        <!-- fin sidebar movil -->
-        
-        <!-- login desplegable -->
-        <div id="login-form" class="webui-popover-content">
-            <div class="row desplegable">
-                <form class="col s12 m12 l12" action="" method="post">
-                    <div class="input-field center">
-                        <img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/>
-                    </div>
-                    <div class="input-field center">
-                        <span class="black-text name">John Doe</span>
-                    </div>
-                    <div class="input-field center">
-                        <span class="black-text email">jdandturk@gmail.com</span>
-                    </div>
-                    <div class="input-field col l12">
-                        <a class="waves-effect waves-light btn" href="user_registration.xhtml">
-                            <i class="material-icons right">do_not_disturb_alt</i>Cerrar Sesión
-                        </a>
-                    </div>
-                </form>
-            </div> 
-        </div>
-        <!-- fin login desplegable -->
-        
-        <!-- boton up -->
-        <div class="up">
-            <a class="btn-floating btn-large waves-effect waves-light z-depth-3 #00b8d4 cyan accent-4 pulse"><i class="material-icons">expand_less</i></a>
-        </div>
-        <!-- fin boton up -->
-        
-        <script src="resources/js/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="resources/js/materialize.min.js" type="text/javascript"></script>
-        <script src="resources/js/jquerywebui-popover.js" type="text/javascript"></script>
-        <script src="resources/js/scripts.js" type="text/javascript"></script>
-        <script src="resources/js/cargar_imagen_perfil.js" type="text/javascript"></script>
+        </ui:composition>
         
     </h:body>
 </html>

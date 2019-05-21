@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -42,6 +43,10 @@ public class Usuario implements Serializable {
     
     @Column(name = "cod_tpuser")
     private short cod_tpuser = 1;
+    
+    @Lob()
+    @Column(name = "img")
+    private byte[] img;
     
     public int getCod_usuario() {
         return cod_usuario;
@@ -121,6 +126,14 @@ public class Usuario implements Serializable {
 
     public void setCod_tpuser(short cod_tpuser) {
         this.cod_tpuser = cod_tpuser;
+    }
+
+    public byte[] getImg() {
+        return img;
+    }
+
+    public void setImg(byte[] img) {
+        this.img = img;
     }
     
     @Override

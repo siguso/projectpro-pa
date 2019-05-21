@@ -77,25 +77,6 @@ body{
 /********** fin search-bar **********/
 /********** fin header1 **********/
 
-/********** header3 **********/
-.nav3 .nav-wrapper{
-    background-color: #bdbdbd;
-}
-.nav3 .nav-wrapper .menu3 li a{
-    font-size: 1rem;
-}
-#nav3 .dropdown-content li a{
-    color: #000;
-}
-#nav3 .dropdown-content li a:hover{
-    background: #00abc5;
-    color: white;
-}
-#nav3 .nav-wrapper i{
-    margin-left: 5px;
-}
-/********** fin header3 **********/
-
 /********** menu lateral movil **********/
 .contenedor-menu2{
     width: 119%;
@@ -171,12 +152,6 @@ body{
 }
 /********** fin contenido **********/
 
-/********** paginacion **********/
-.pagination .active a{
-    background-color: #1a95d5;
-}
-/********************************/
-
 /********** sidebar **********/
 #wrapper{
     padding-left: 0;
@@ -219,15 +194,6 @@ body{
     width: 100%
 }
 /****************************/
-
-/********** slider **********/
-.header2 img{
-    width: 100%;
-    height: 280px;
-    background-size: contain;
-    overflow: hidden;
-}
-/***************************/
 
 /********** menu acordeon **********/
 .contenedor-menu{
@@ -278,22 +244,6 @@ body{
 }
 /********************************/
 
-/********** sticky nav **********/
-.menu-fixed{
-    position:fixed;
-    z-index:1000;
-    top:64px;
-}
-.anti-salto{
-    margin-top: 70px;
-}
-.menu-fixed2{
-    z-index:1000;
-    /*top:56px;*/
-    top:0px;
-}
-/********************************/
-
 /********** menu desplegable **********/
 #login-form img{
     height: 90px;
@@ -322,6 +272,21 @@ body{
     right: 15px;
 }
 /******************************/
+
+/********** botones **********/
+.section .btn{
+    background-color: #00abc5;
+}
+.section .btn:hover{
+    background-color: #bdbdbd;
+}
+.section .btn{
+    width: 100%;
+}
+.section .archivo{
+    width: 30%;
+}
+/****************************/
 
 /********** like/dislike **********/
 .vote{
@@ -360,6 +325,13 @@ body{
 }
 /**********************************/
 
+/********** titulos **********/
+#publi{
+    border-bottom-style: dashed; 
+    border-width: 1px; 
+}
+/*****************************/
+
 /********** scrollbar **********/
 *::-webkit-scrollbar {
 	width: 10px;
@@ -372,9 +344,4 @@ body{
 	/*border: 2px solid #424242;*/
 }
 /*******************************/
-
-
-
-
-
 

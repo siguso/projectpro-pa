@@ -6,8 +6,6 @@ $(document).ready(function(){
         indicators: false
     });
     
-//    $("#wrapper").toggleClass("toggled");
-    
     $('.tooltipped').tooltip();
     
     $('.collapsible').collapsible();
@@ -26,9 +24,22 @@ $(document).ready(function(){
     });
     
     $('.materialboxed').materialbox();
-    
-    $('.modal').modal();
+
 });
+
+/*********** cerrar popover **********/
+/*function cerrarse(){ 
+    $("#login-form").webuiPopover('hide');
+} */
+/*************************************/
+
+/********** modal **********/
+$(document).ready(function(){
+    $('.modal').modal({
+        dismissible: false 
+    });
+})
+/***************************/
 
 /********** limpiar campos **********/
 function limpiarForm(){
@@ -58,29 +69,6 @@ $('textarea.max').keyup(function() {
     }
 });
 /**************************************/
-/********** datepicker fecha **********/
-//$(document).ready(function(){
-//    $('.datepicker').datepicker({
-//        format: 'dd/mm/yyyy',
-//        showClearBtn: true,
-//        i18n: {
-//            clear: 'limpiar',
-//            cancel: 'cancelar',
-//            
-//            months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto',
-//                'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-//                  
-//            monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dec'],
-//                  
-//            weekdays: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado' ],
-//      
-//            weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-//        
-//            weekdaysAbbrev: ['D', 'L', 'M', 'M', 'J', 'V', 'S']
-//        }
-//    });
-//});
-/************************************/
 
 /********** toggled al hacer click en el menu **********/
 $("#menu-toggle").click(function(e){
@@ -176,8 +164,6 @@ $(document).ready(function(){
 	});
 });
 /**********************************************/
-
-
 
 /********** sticky navbar projects*********/
 $(document).ready(function () {

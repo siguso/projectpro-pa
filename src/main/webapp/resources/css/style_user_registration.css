@@ -26,14 +26,6 @@ body{
 }
 /***************************/
 
-/********** feedback **********/
-/*.ui-password-panel-overlay{ 
-    background: #00abc5;
-    opacity: 1;
-    border: none;
-}*/
-/******************************/
-
 /********** text box **********/
 /* label color */
 .section .forms label{
@@ -80,13 +72,6 @@ body{
     font-size: 13px;
     text-align: center;
     color: #00abc5;
-}
-#pregunta a:hover{
-    /*background-color: #bdbdbd;*/
-    color: #bdbdbd;
-}
-.section .link-cuenta{
-    font-size: 20px;
 }
 
 /********** card panel **********/
@@ -142,26 +127,6 @@ body{
     margin-left: auto;
 }
 /*********************************************/
-
-/********** date **********/
-/*.section .datepicker-date-display{
-    background-color: #bdbdbd;
-}
-.section .datepicker-cancel,
-.section .datepicker-done{
-    color: #00abc5;
-}
-.section .datepicker-table td.is-today{
-    color: #00abc5;
-}
-.section .datepicker-table td.is-selected{
-    background-color: #bdbdbd;
-    color:#fff;
-}
-.section .datepicker-day-button:focus{
-    background-color: #bdbdbd;
-}*/
-/*************************/
 
 /********** boton up **********/
 .up{

@@ -77,25 +77,6 @@ body{
 /********** fin search-bar **********/
 /********** fin header1 **********/
 
-/********** header3 **********/
-.nav3 .nav-wrapper{
-    background-color: #bdbdbd;
-}
-.nav3 .nav-wrapper .menu3 li a{
-    font-size: 1rem;
-}
-#nav3 .dropdown-content li a{
-    color: #000;
-}
-#nav3 .dropdown-content li a:hover{
-    background: #00abc5;
-    color: white;
-}
-#nav3 .nav-wrapper i{
-    margin-left: 5px;
-}
-/********** fin header3 **********/
-
 /********** menu lateral movil **********/
 .contenedor-menu2{
     width: 119%;
@@ -171,126 +152,31 @@ body{
 }
 /********** fin contenido **********/
 
-/********** paginacion **********/
-.pagination .active a{
-    background-color: #1a95d5;
+/********** modal **********/
+.modal img{
+    height: 90px;
+    width: 90px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
-/********************************/
-
-/********** sidebar **********/
-#wrapper{
-    padding-left: 0;
-    padding-top: 1px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+.modal nav{
+    height: 120px;
 }
-#wrapper.toggled{
-    padding-left: 250px;
+.modal .right{
+    margin-top: 30px;
+    margin-right: 10px;
 }
-#sidebar-wrapper{
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+.modal .right a:hover{
+    background: none;
 }
-#wrapper.toggled #sidebar-wrapper{
-    width: 250px;
-}
-
-/* Sidebar Styles */
-.sidebar-nav li{
-    text-indent: 20px;
-    line-height: 40px;
-}
-.sidebar-nav li a{
-    display: block;
-    text-decoration: none;
-    color: #999999;
-    width: 100%
-}
-/****************************/
-
-/********** slider **********/
-.header2 img{
-    width: 100%;
-    height: 280px;
-    background-size: contain;
-    overflow: hidden;
+.modal .right i:hover{
+    color: #1a95d5;
 }
 /***************************/
 
-/********** menu acordeon **********/
-.contenedor-menu{
-    width: 119%;
-    /*min-width: 297px;*/
-    margin: 0px;
-    display: inline-block;
-    line-height: 18px;
-}
-.contenedor-menu .menu{
-    width: 84%;
-}
-.contenedor-menu ul{
-    list-style: none;
-}
-.contenedor-menu .menu li a{
-    /*color:#494949;*/
-    /*background: #e9e9e9;*/
-    display: block;
-    padding: 5px 15px 5px 5px;
-}
-.contenedor-menu .menu li a:hover{
-    background: #1a95d5;
-    color: #fff;
-}
-.contenedor-menu .menu li .categorias:hover{
-    background: none;
-    color: #1a95d5;
-}
-.contenedor-menu .menu li .categorias{
-    color: #1a95d5;
-}
-.contenedor-menu .menu .material-icons{
-    padding-top: 8px;
-}
-.contenedor-menu .menu ul{
-    display: none;
-}
-.contenedor-menu .menu ul li a{
-    /*background: #424242;*/
-    /*color:#e9e9e9;*/
-    background: #e9e9e9;
-    color: #424242;
-}
-.contenedor-menu .menu .activado > a{
-    background: #1a95d5;
-    color:#fff;
-}
-/********************************/
-
-/********** sticky nav **********/
-.menu-fixed{
-    position:fixed;
-    z-index:1000;
-    top:64px;
-}
-.anti-salto{
-    margin-top: 70px;
-}
-.menu-fixed2{
-    z-index:1000;
-    /*top:56px;*/
-    top:0px;
+/********** paginacion **********/
+.pagination .active a{
+    background-color: #1a95d5;
 }
 /********************************/
 
@@ -323,42 +209,75 @@ body{
 }
 /******************************/
 
-/********** like/dislike **********/
-.vote{
-    width: 150px;
-    margin: 50px 0;
-    float: right;
+/*********** imagen de perfil user_registration **********/
+#imageUpload{
+    display: none;
 }
-.vote_bar{
-    width: 100%;
-    height: 4px;
-    background-color: #f2504b;
-}
-.vote_progress{
-    height: 4px;
-    width: 50%;
-    background-color: #1a95d5;
-}
-.vote_btns{
-    margin-top: 10px;
-    text-align: right;
-}
-.vote_btn{
-    border: none;
-    padding: 0;
-    margin: 0 0 0 10px;
-    display: inline-block;
+#profileImage{
     cursor: pointer;
-    background: transparent;
-    transition: color 0.3s;
 }
-.vote_like:hover{
-    color: #1a95d5;
+#profile-container{
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+/*    margin-top: 0px;
+    margin-bottom: 45px;*/
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
 }
-.vote_dislike:hover{
-    color: #f2504b;
+#profile-container img{
+    width: 120px;
+    height: 120px;
 }
-/**********************************/
+/*******************************************************/
+
+/********** text box **********/
+/* label color */
+.section .forms label{
+    color:  #000;
+}
+/* label focus color */
+.section .forms .input-field input[type=email]:focus + label,
+.section .forms .input-field input[type=password]:focus + label,
+.section .forms .input-field input[type=text]:focus + label,
+.section .forms .input-field input[type=tel]:focus + label,
+.section .forms .input-field textarea:focus + label{    
+    color:  #00abc5;
+}
+/* label underline focus color */
+.section .forms .input-field input[type=email]:focus,
+.section .forms .input-field input[type=password]:focus,
+.section .forms .input-field input[type=text]:focus,
+.section .forms .input-field input[type=tel]:focus,
+.section .forms .input-field textarea:focus{
+    border-bottom: 1px solid  #00abc5;
+    box-shadow: 0 1px 0 0  #00abc5;
+}
+.section .forms .input-field .prefix.active {
+    color: #00abc5;
+}
+/******************************/
+
+/********** botones **********/
+.section .btn{
+    background-color: #00abc5;
+}
+.section .btn:hover{
+    background-color: #bdbdbd;
+}
+.section .btn{
+    width: 100%;
+}
+.section .archivo{
+    width: 30%;
+}
+/****************************/
 
 /********** scrollbar **********/
 *::-webkit-scrollbar {
@@ -372,9 +291,4 @@ body{
 	/*border: 2px solid #424242;*/
 }
 /*******************************/
-
-
-
-
-
 
