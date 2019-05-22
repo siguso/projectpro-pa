@@ -46,7 +46,8 @@ public class Usuario implements Serializable {
     
     @Lob()
     @Column(name = "img")
-    private byte[] img;
+    //private byte[] img;
+    private String img;
     
     public int getCod_usuario() {
         return cod_usuario;
@@ -128,11 +129,19 @@ public class Usuario implements Serializable {
         this.cod_tpuser = cod_tpuser;
     }
 
-    public byte[] getImg() {
+    /*public byte[] getImg() {
         return img;
     }
 
     public void setImg(byte[] img) {
+        this.img = img;
+    }*/
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
         this.img = img;
     }
     
