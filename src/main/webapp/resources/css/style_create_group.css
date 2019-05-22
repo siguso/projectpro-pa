@@ -8,13 +8,13 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-.modal{ 
+#crear_grupo_modal #crear_grupo{ 
     max-height: 100% !important ; 
     overflow-y: hidden !important ;
 }
 
 /********** growl **********/
-#update_modal .ui-growl-item-container {
+#crear_grupo_modal #crear_grupo .ui-growl-item-container {
     background: #00abc5;
     opacity: 1;
     border: none;
@@ -22,66 +22,56 @@ body{
     -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); 
     -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);*/
 }    
-#update_modal .ui-growl .ui-growl-icon-close{
+#crear_grupo_modal #crear_grupo .ui-growl .ui-growl-icon-close{
     background-color: #fff;
 }
 /***************************/
 
 /********** text box **********/
 /* label color */
-#update_modal .forms label{
+#crear_grupo_modal .forms label{
     color:  #000;
 }
 /* label focus color */
-#update_modal .forms .input-field input[type=email]:focus + label,
-#update_modal .forms .input-field input[type=password]:focus + label,
-#update_modal .forms .input-field input[type=text]:focus + label,
-#update_modal .forms .input-field input[type=tel]:focus + label{    
+#crear_grupo_modal .forms .input-field input[type=email]:focus + label,
+#crear_grupo_modal .forms .input-field input[type=password]:focus + label,
+#crear_grupo_modal .forms .input-field input[type=text]:focus + label,
+#crear_grupo_modal .forms .input-field input[type=tel]:focus + label{    
     color:  #00abc5;
 }
 /* label underline focus color */
-#update_modal .forms .input-field input[type=email]:focus,
-#update_modal .forms .input-field input[type=password]:focus,
-#update_modal .forms .input-field input[type=text]:focus,
-#update_modal .forms .input-field input[type=tel]:focus{
+#crear_grupo_modal .forms .input-field input[type=email]:focus,
+#crear_grupo_modal .forms .input-field input[type=password]:focus,
+#crear_grupo_modal .forms .input-field input[type=text]:focus,
+#crear_grupo_modal .forms .input-field input[type=tel]:focus{
     border-bottom: 1px solid  #00abc5;
     box-shadow: 0 1px 0 0  #00abc5;
 }
-#update_modal .forms .input-field .prefix.active {
+#crear_grupo_modal .forms .input-field .prefix.active {
     color: #00abc5;
 }
 /******************************/
 
 /********** botones **********/
-#update_modal .btn{
+#crear_grupo_modal .btn{
     background-color: #00abc5;
 }
-#update_modal .btn:hover{
+#crear_grupo_modal .btn:hover{
     background-color: #bdbdbd;
 }
-#update_modal .btn{
+#crear_grupo_modal .btn{
     width: 100%;
 }
 /*********************************/
 
-/********** hide/show password **********/
-#update_modal .field-icon {
-    float: right;
-    margin-left: -25px;
-    margin-top: -25px;
-    position: relative;
-    z-index: 2;
-}
-/***************************************/
-
 /*********** imagen de perfil user_registration **********/
-#update_modal #imageUpload{
+#crear_grupo_modal #imageUpload{
     display: none;
 }
-#update_modal #profileImage{
+#crear_grupo_modal #profileImage{
     cursor: pointer;
 }
-#update_modal #profile-container{
+#crear_grupo_modal #profile-container{
     width: 120px;
     height: 120px;
     overflow: hidden;
@@ -94,7 +84,7 @@ body{
     -o-border-radius: 50%;
     border-radius: 50%;
 }
-#update_modal #profile-container img{
+#crear_grupo_modal #profile-container img{
     width: 120px;
     height: 120px;
 }
@@ -112,3 +102,4 @@ body{
 	/*border: 2px solid #424242;*/
 }
 /*******************************/
+

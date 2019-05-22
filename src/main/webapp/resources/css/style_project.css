@@ -56,6 +56,9 @@ body{
     width: 200px;
     margin-top: 10px;
 }
+.nav1 .dropdown-content li a{
+    color: #00abc5;
+}
 /*****************************/
 
 /********** search-bar **********/
@@ -73,6 +76,10 @@ body{
     position: absolute;
     top: 0px;
     right: 0px;
+}
+.nav1 .dropdown-content li a:hover{
+    background: #00abc5;
+    color: white;
 }
 /********** fin search-bar **********/
 /********** fin header1 **********/

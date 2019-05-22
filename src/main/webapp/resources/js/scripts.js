@@ -15,6 +15,15 @@ $(document).ready(function(){
         constrainWidth: true
     });
     
+    $(".dropdown-trigger2").dropdown({
+        coverTrigger: false,
+        constrainWidth: false,
+    });
+    /*var dropdowns = document.querySelectorAll('.dropdown-trigger2')
+        for (var i = 0; i < dropdowns.length; i++){
+        M.Dropdown.init(dropdowns[i]);
+    }*/
+    
     $('input#input_text, textarea#textarea').characterCounter();
     
     $('select').formSelect();

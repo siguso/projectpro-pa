@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         <link href="resources/css/style_project.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/style_update_user_data.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/style_create_group.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/jquerywebui-popover.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/font.css" rel="stylesheet" type="text/css"/>
@@ -48,14 +49,95 @@
                                 </div>
                                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                                     <li class="waves-effect waves-light"><a href="#"><i class="material-icons left">home</i>Inicio</a></li>
-                                    <li class="waves-effect waves-light"><a href="#"><i class="material-icons left">help</i>Acerca</a></li>                     
-                                    <li class="user waves-effect waves-light"><a id="login" href="#"><img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/></a></li>  
+                                    <li><a href="#" class="dropdown-trigger2" data-target="grupo"><i class="material-icons left">group</i>Grupo</a></li>
+                                    <li><a href="#" class="dropdown-trigger2" data-target="publicacion"><i class="material-icons left">book</i>Publicación</a></li>
+                                    <li><a href="#"><i class="material-icons left">help</i>Acerca</a></li>
+                                    <li class="user"><a id="login" href="#"><img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/></a></li>  
                                 </ul>
-                            </div>                                     
+                            </div>   
                         </nav>
+                        <ul id="grupo" class="dropdown-content">
+                            <li><a href="#crear_grupo_modal" class="modal-trigger"><i class="material-icons left">group_add</i>Crear Grupo</a></li>
+                            <li><a href="#!"><i class="material-icons left">contacts</i>Ver Grupo</a></li>
+                        </ul>
+                        <ul id="publicacion" class="dropdown-content">
+                            <li><a href="#!"><i class="material-icons left">description</i>Registrar Proyecto</a></li>
+                        </ul>
                     </div>
                 </header>
                 <!-- fin barra de navegación -->
+                
+                <!-- modal crear grupo -->
+                <div id="crear_grupo_modal" class="modal">
+                    <div class="modal-content">
+                        <h:form id="formulario2" class="col s12 m9 l8 offset-l2 offset-m2">
+                            <p:growl autoUpdate="true" />
+                            <div class="row">
+                                <div class="col s12 m10 l5 offset-l2 pull-m2">
+                                    <blockquote>
+                                        <h4>CREAR GRUPO DE PROYECTO</h4>
+                                        <h6>(*)Dato requerido</h6>
+                                    </blockquote>
+                                </div>     
+                                <div class="input-field col s12 m2 l3 pull-m1">
+                                    <div id="profile-container">
+                                        <image id="profileImage" src="resources/img/user_photo.png" class="tooltipped responsive-img" data-tooltip="Click para agregar tu foto de perfil"/>
+                                    </div>
+                                    <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" accept="image/*" capture=""/>
+                                </div>   
+                            </div>
+                            <div class="row forms">
+                                <div class="input-field col s12 m11 l4 offset-l2">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <h:inputText id="name1" required="true" value="#{usuarioController.usuario.nom1}" requiredMessage="1er nombre es requerido" />
+                                    <h:outputLabel for="name1" value="1er Nombre(*)"/>
+                                </div>
+                                <div class="input-field col s12 m11 l4">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <h:inputText id="name2" required="" value="#{usuarioController.usuario.nom2}" requiredMessage="" />
+                                    <h:outputLabel for="name2" value="2do Nombre"/>
+                                </div>
+                                <div class="input-field col s12 m11 l4 offset-l2">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <h:inputText id="lastname1" required="true" value="#{usuarioController.usuario.apell1}" requiredMessage="1er apellido es requerido" />
+                                    <h:outputLabel for="lastname1" value="1er Apellido(*)"/>
+                                </div>
+                                <div class="input-field col s12 m11 l4">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <h:inputText id="lastname2" required="" value="#{usuarioController.usuario.apell2}" requiredMessage="" />
+                                    <h:outputLabel for="lastname2" value="2do Apellido"/>
+                                </div>
+                                <div class="input-field col s12 m11 l4 offset-l2">
+                                    <i class="material-icons prefix">email</i>
+                                    <h:inputText id="email" required="true" value="#{usuarioController.usuario.email}" requiredMessage="Correo Electronico es requerido" validatorMessage="Correo no valido">
+                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                    </h:inputText>
+                                    <h:outputLabel for="email" value="Correo Electronico(*)"/>
+                                </div>
+                                <div class="input-field col s12 m11 l4">
+                                    <i class="material-icons prefix">lock</i>
+                                    <h:inputSecret id="password" required="true" value="#{usuarioController.usuario.pass}" requiredMessage="Contraseña es requerida"  />
+                                    <!--<p:password id="password" required="true" value="password" requiredMessage="Contraseña es requerida" feedback="true" inline="false"
+                                            promptLabel="Nivel de Seguridad" weakLabel="Débil" strongLabel="Fuerte" goodLabel="Buena" />-->
+                                    <h:outputLabel for="password" value="Contraseña(*)"/>
+                                    <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                </div>
+                                <div class="input-field col s12 m11 l4 offset-l2">
+                                    <i class="material-icons prefix">phone</i>
+                                    <h:inputText id="phone" required="true" value="#{usuarioController.usuario.cel}" requiredMessage="Número celular es requerido" />
+                                    <h:outputLabel for="phone" value="Número Celular(*)"/>
+                                </div>
+                                <div class="input-field col s12 m11 l8 offset-l2">
+                                    <h:commandLink value="Actualizar datos de usuario" styleClass="btn waves-effect waves-light" actionListener="#{usuarioController.modificar()}" />
+                                </div>                   
+                                <div class="input-field col s12 m11 l8 offset-l2">
+                                    <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>
+                                </div>           
+                            </div>     
+                        </h:form>
+                    </div>
+                </div>
+                <!-- fin modal crear_grupo -->
                 
                 <!-- login desplegable -->
                 <div id="login-form" class="webui-popover-content">
@@ -78,7 +160,6 @@
                             </div>
                             <div class="input-field">
                                 <!--<h:commandLink value="ACTUALIZAR DATOS" styleClass="btn waves-effect waves-light" actionListener="#{usuarioController.modificar(usuario)}" action="/update_user_data?faces-redirect=true"  />-->
-                                <!--<a class="modal-trigger btn waves-effect waves-light" href="update_user_data.xhtml">ACTUALIZAR DATOS</a>-->
                                 <a class="modal-trigger btn waves-effect waves-light" href="#update_modal" >ACTUALIZAR DATOS</a>
                             </div>
                             <div class="input-field">
@@ -89,6 +170,7 @@
                 </div>
                 <!-- fin login desplegable -->
                 
+                <!-- modal update_user_data -->
                 <div id="update_modal" class="modal">
                     <div class="modal-content">
                         <h:form id="formulario" class="col s12 m9 l8 offset-l2 offset-m2">
@@ -158,6 +240,7 @@
                         </h:form>
                     </div>
                 </div>
+                <!-- fin modal update_user_data -->
                 
             </ui:insert>
         </div>
