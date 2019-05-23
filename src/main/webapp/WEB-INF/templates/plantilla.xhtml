@@ -72,63 +72,55 @@
                     <div class="modal-content">
                         <h:form id="formulario2" class="col s12 m9 l8 offset-l2 offset-m2">
                             <p:growl autoUpdate="true" />
-                            <div class="row">
-                                <div class="col s12 m10 l5 offset-l2 pull-m2">
+                            <div class="row forms">
+                                <div class="col s12 m10 l8 offset-l2">
                                     <blockquote>
                                         <h4>CREAR GRUPO DE PROYECTO</h4>
                                         <h6>(*)Dato requerido</h6>
                                     </blockquote>
-                                </div>     
-                                <div class="input-field col s12 m2 l3 pull-m1">
-                                    <div id="profile-container">
-                                        <image id="profileImage" src="resources/img/user_photo.png" class="tooltipped responsive-img" data-tooltip="Click para agregar tu foto de perfil"/>
-                                    </div>
-                                    <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" accept="image/*" capture=""/>
-                                </div>   
-                            </div>
-                            <div class="row forms">
-                                <div class="input-field col s12 m11 l4 offset-l2">
+                                </div>  
+                                <div class="input-field col s12 m11 l6 offset-l2">
+                                    <i class="material-icons prefix">title</i>
+                                    <h:inputText id="name" required="true" value="" requiredMessage="Nombre es requerido" />
+                                    <h:outputLabel for="name" value="Nombre del Grupo(*)"/>
+                                </div>
+                                <div class="input-field col s12 m11 l2">
+                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
+                                </div>
+                                <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <h:inputText id="name1" required="true" value="#{usuarioController.usuario.nom1}" requiredMessage="1er nombre es requerido" />
-                                    <h:outputLabel for="name1" value="1er Nombre(*)"/>
+                                    <h:inputText id="autor1" required="" value="" requiredMessage="1er autor es requerido" />
+                                    <h:outputLabel for="autor1" value="1er Autor(*)"/>
                                 </div>
-                                <div class="input-field col s12 m11 l4">
+                                <div class="input-field col s12 m11 l2">
+                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
+                                </div>
+                                <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <h:inputText id="name2" required="" value="#{usuarioController.usuario.nom2}" requiredMessage="" />
-                                    <h:outputLabel for="name2" value="2do Nombre"/>
+                                    <h:inputText id="autor2" required="true" value="" requiredMessage="2do autor es requerido" />
+                                    <h:outputLabel for="autor2" value="2do Autor(*)"/>
                                 </div>
-                                <div class="input-field col s12 m11 l4 offset-l2">
+                                <div class="input-field col s12 m11 l2">
+                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
+                                </div>
+                                <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <h:inputText id="lastname1" required="true" value="#{usuarioController.usuario.apell1}" requiredMessage="1er apellido es requerido" />
-                                    <h:outputLabel for="lastname1" value="1er Apellido(*)"/>
+                                    <h:inputText id="autor3" required="" value="" requiredMessage="" />
+                                    <h:outputLabel for="autor3" value="3er Autor"/>
                                 </div>
-                                <div class="input-field col s12 m11 l4">
+                                <div class="input-field col s12 m11 l2">
+                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
+                                </div>
+                                <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <h:inputText id="lastname2" required="" value="#{usuarioController.usuario.apell2}" requiredMessage="" />
-                                    <h:outputLabel for="lastname2" value="2do Apellido"/>
+                                    <h:inputText id="autor4" required="" value="" requiredMessage="" />
+                                    <h:outputLabel for="autor4" value="4to Autor"/>
                                 </div>
-                                <div class="input-field col s12 m11 l4 offset-l2">
-                                    <i class="material-icons prefix">email</i>
-                                    <h:inputText id="email" required="true" value="#{usuarioController.usuario.email}" requiredMessage="Correo Electronico es requerido" validatorMessage="Correo no valido">
-                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-                                    </h:inputText>
-                                    <h:outputLabel for="email" value="Correo Electronico(*)"/>
-                                </div>
-                                <div class="input-field col s12 m11 l4">
-                                    <i class="material-icons prefix">lock</i>
-                                    <h:inputSecret id="password" required="true" value="#{usuarioController.usuario.pass}" requiredMessage="Contraseña es requerida"  />
-                                    <!--<p:password id="password" required="true" value="password" requiredMessage="Contraseña es requerida" feedback="true" inline="false"
-                                            promptLabel="Nivel de Seguridad" weakLabel="Débil" strongLabel="Fuerte" goodLabel="Buena" />-->
-                                    <h:outputLabel for="password" value="Contraseña(*)"/>
-                                    <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                                </div>
-                                <div class="input-field col s12 m11 l4 offset-l2">
-                                    <i class="material-icons prefix">phone</i>
-                                    <h:inputText id="phone" required="true" value="#{usuarioController.usuario.cel}" requiredMessage="Número celular es requerido" />
-                                    <h:outputLabel for="phone" value="Número Celular(*)"/>
+                                <div class="input-field col s12 m11 l2">
+                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
                                 </div>
                                 <div class="input-field col s12 m11 l8 offset-l2">
-                                    <h:commandLink value="Actualizar datos de usuario" styleClass="btn waves-effect waves-light" actionListener="#{usuarioController.modificar()}" />
+                                    <h:commandLink value="Crear grupo" styleClass="btn waves-effect waves-light" />
                                 </div>                   
                                 <div class="input-field col s12 m11 l8 offset-l2">
                                     <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>
