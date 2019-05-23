@@ -3,7 +3,7 @@ package com.projectpro.controller;
 import com.projectpro.ejb.UsuarioFacadeLocal;
 import com.projectpro.model.Usuario;
 import java.io.Serializable;
-//import java.util.List;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
@@ -20,7 +20,8 @@ public class UsuarioController implements Serializable {
     @EJB
     private UsuarioFacadeLocal usuarioEJB;
     private Usuario usuario;
-    //private List<Usuario>usua;
+    private List<Usuario>usuarios;
+    private List<Usuario>filtrarusuarios;
 
     public Usuario getUsuario() {
         return usuario;
@@ -30,18 +31,26 @@ public class UsuarioController implements Serializable {
         this.usuario = usuario;
     }
 
-    /*public List<Usuario> getUsua() {
-        return usua;
+    public List<Usuario> getUsuarios() {
+        return usuarios;
     }
 
-    public void setUsua(List<Usuario> usua) {
-        this.usua = usua;
-    }*/
-    
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
+    }
+
+    public List<Usuario> getFiltrarusuarios() {
+        return filtrarusuarios;
+    }
+
+    public void setFiltarusuarios(List<Usuario> filtrarusuarios) {
+        this.filtrarusuarios = filtrarusuarios;
+    }
+
     @PostConstruct
     public void init(){
         usuario = new Usuario();
-        //usua = usuarioEJB.findAll();
+        usuarios = usuarioEJB.findAll();
     }
     
     public void registrar(){

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+#listado_usuario_modal{ 
+    max-height: 100% !important ; 
+    overflow-y: hidden !important ;
+}
+
+/********** botones **********/
+#listado_usuario_modal .btn{
+    background-color: #00abc5;
+}
+#listado_usuario_modal .btn:hover{
+    background-color: #bdbdbd;
+}
+#listado_usuario_modal .btn{
+    width: 100%;
+}
+/*********************************/
+
+/********** tabla usuarios **********/
+.ui-datatable-header{
+    background: #00abc5;
+    color: white;
+}
+.ui-datatable thead th{
+    background: #00abc5;
+    color: white;
+}
+.ui-datatable tbody td{
+    background: white;
+}
+.ui-datatable .ui-paginator{
+    background: #00abc5;
+}
+/***********************************/

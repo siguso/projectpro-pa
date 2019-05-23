@@ -17,6 +17,7 @@
         <link href="resources/css/style_project.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/style_update_user_data.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/style_create_group.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/style_group_user_list.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/jquerywebui-popover.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/font.css" rel="stylesheet" type="text/css"/>
@@ -71,7 +72,7 @@
                 <div id="crear_grupo_modal" class="modal">
                     <div class="modal-content">
                         <h:form id="formulario2" class="col s12 m9 l8 offset-l2 offset-m2">
-                            <p:growl autoUpdate="true" />
+                            <p:growl />
                             <div class="row forms">
                                 <div class="col s12 m10 l8 offset-l2">
                                     <blockquote>
@@ -84,16 +85,13 @@
                                     <h:inputText id="name" required="true" value="" requiredMessage="Nombre es requerido" />
                                     <h:outputLabel for="name" value="Nombre del Grupo(*)"/>
                                 </div>
-                                <div class="input-field col s12 m11 l2">
-                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
-                                </div>
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
                                     <h:inputText id="autor1" required="" value="" requiredMessage="1er autor es requerido" />
                                     <h:outputLabel for="autor1" value="1er Autor(*)"/>
                                 </div>
                                 <div class="input-field col s12 m11 l2">
-                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
+                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
                                 </div>
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
@@ -101,7 +99,7 @@
                                     <h:outputLabel for="autor2" value="2do Autor(*)"/>
                                 </div>
                                 <div class="input-field col s12 m11 l2">
-                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
+                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
                                 </div>
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
@@ -109,7 +107,7 @@
                                     <h:outputLabel for="autor3" value="3er Autor"/>
                                 </div>
                                 <div class="input-field col s12 m11 l2">
-                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
+                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
                                 </div>
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
@@ -117,7 +115,7 @@
                                     <h:outputLabel for="autor4" value="4to Autor"/>
                                 </div>
                                 <div class="input-field col s12 m11 l2">
-                                    <h:commandLink value="Agregar" styleClass="btn waves-effect waves-light" />
+                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
                                 </div>
                                 <div class="input-field col s12 m11 l8 offset-l2">
                                     <h:commandLink value="Crear grupo" styleClass="btn waves-effect waves-light" />
@@ -131,16 +129,55 @@
                 </div>
                 <!-- fin modal crear_grupo -->
                 
+                <!-- modal listado_usuario -->
+                <div id="listado_usuario_modal" class="modal">
+                    <div class="modal-content">
+                        <h:form id="formulario3" class="col s12 m9 l8 offset-l2 offset-m2">
+                            <p:growl />
+                            <div class="row forms">
+                                <div class="col s12 m10 l8">
+                                    <blockquote>
+                                        <h4>LISTA DE USUARIOS</h4>
+                                    </blockquote>     
+                                </div>  
+                                <div class="col s12 m10 l12">
+                                    <p:dataTable paginatorPosition="bottom" var="usuarios" value="#{usuarioController.usuarios}" paginator="true" rows="10" widgetVar="buscarUsuariosGrupo" 
+                                                 filteredValue="#{usuarioController.filtrarusuarios}">
+                                        <f:facet name="header">
+                                            <p:outputPanel>
+                                                <h:outputText value="Buscar: " />
+                                                <p:inputText id="globalFilter" onkeyup="PF('buscarUsuariosGrupo').filter()" style="width:200px" placeholder="Nombre, Apellido, Email"/>
+                                            </p:outputPanel>
+                                        </f:facet>
+                                        <p:column headerText="1er Nombre" style="width: 150px">
+                                            <h:outputText value="#{usuarios.nom1}" />
+                                        </p:column>
+                                        <p:column headerText="2do Nombre" style="width: 150px">
+                                            <h:outputText value="#{usuarios.nom2}" />
+                                        </p:column>
+                                        <p:column headerText="1er Apellido" style="width: 150px">
+                                            <h:outputText value="#{usuarios.apell1}" />
+                                        </p:column>
+                                        <p:column headerText="2do Apellido" style="width: 150px">
+                                            <h:outputText value="#{usuarios.apell2}" />
+                                        </p:column>
+                                        <p:column headerText="Email">
+                                            <h:outputText value="#{usuarios.email}" />
+                                        </p:column>
+                                    </p:dataTable>     
+                                </div>
+                                <div class="input-field col s12 m11 l8 offset-l2">
+                                    <a class="modal-close btn waves-effect waves-light" href="#" >REGRESAR</a>
+                                </div>           
+                            </div>     
+                        </h:form>
+                    </div>
+                </div>
+                <!-- fin modal listado_usuario -->
+                
                 <!-- login desplegable -->
                 <div id="login-form" class="webui-popover-content">
                     <div class="row desplegable">
-                        <!--<h:form class="col s12 m12 l12">
-                            <p:dataTable var="usu" value="" rows="1">
-                                <p:column headerText="Nombre" styleClass="vertAling">
-                                    <h:outputText value="" />
-                                </p:column>
-                            </p:dataTable>
-                        </h:form>-->
                         <h:form class="col s12 m12 l12">
                             <div class="input-field center">                        
                                 <img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/>                        
@@ -166,7 +203,7 @@
                 <div id="update_modal" class="modal">
                     <div class="modal-content">
                         <h:form id="formulario" class="col s12 m9 l8 offset-l2 offset-m2">
-                            <p:growl autoUpdate="true" />
+                            <p:growl />
                             <div class="row">
                                 <div class="col s12 m10 l5 offset-l2 pull-m2">
                                     <blockquote>

@@ -8,13 +8,13 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-#crear_grupo_modal #crear_grupo{ 
+#crear_grupo_modal{ 
     max-height: 100% !important ; 
     overflow-y: hidden !important ;
 }
 
 /********** growl **********/
-#crear_grupo_modal #crear_grupo .ui-growl-item-container {
+#crear_grupo_modal .ui-growl-item-container {
     background: #00abc5;
     opacity: 1;
     border: none;
@@ -22,7 +22,7 @@ body{
     -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); 
     -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);*/
 }    
-#crear_grupo_modal #crear_grupo .ui-growl .ui-growl-icon-close{
+#crear_grupo_modal .ui-growl .ui-growl-icon-close{
     background-color: #fff;
 }
 /***************************/
