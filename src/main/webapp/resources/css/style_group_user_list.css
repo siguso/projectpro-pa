@@ -23,21 +23,57 @@ body{
 #listado_usuario_modal .btn{
     width: 100%;
 }
+#listado_usuario_modal i{
+    color: white;
+}
 /*********************************/
 
 /********** tabla usuarios **********/
-.ui-datatable-header{
+table#users.dataTable thead th{
     background: #00abc5;
     color: white;
+    font-weight: normal;
 }
-.ui-datatable thead th{
-    background: #00abc5;
+table#users.dataTable tbody tr:hover {
+  background: #00abc5;
+  color: white;
+  cursor: pointer;
+}
+table#users.dataTable tbody tr:hover > .sorting_1 {
+  background: #00abc5;
+  color: white;
+  cursor: pointer;
+}
+table#users.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  color: white !important;
+  border: none !important;
+  background: #00abc5 !important;
+
+}
+table#users.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: white !important;
+  border: none !important;
+  background: #bdbdbd !important;
+
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #00abc5 !important;
+  color: white !important;
+  border: none !important;
+}
+.dataTables_wrapper .dataTables_filter input:focus{
+    border-bottom: 1px solid  #00abc5 !important;
+    box-shadow: 0 1px 0 0  #00abc5 !important;
+}
+/*.dataTables_wrapper .dataTables_info {
+    color: #00abc5 !important;
+}*/
+#users a i{
+    color: #00abc5;
+}
+#users a i:hover{
     color: white;
-}
-.ui-datatable tbody td{
-    background: white;
-}
-.ui-datatable .ui-paginator{
-    background: #00abc5;
 }
 /***********************************/

@@ -21,7 +21,6 @@ public class UsuarioController implements Serializable {
     private UsuarioFacadeLocal usuarioEJB;
     private Usuario usuario;
     private List<Usuario>usuarios;
-    private List<Usuario>filtrarusuarios;
 
     public Usuario getUsuario() {
         return usuario;
@@ -37,14 +36,6 @@ public class UsuarioController implements Serializable {
 
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
-    }
-
-    public List<Usuario> getFiltrarusuarios() {
-        return filtrarusuarios;
-    }
-
-    public void setFiltarusuarios(List<Usuario> filtrarusuarios) {
-        this.filtrarusuarios = filtrarusuarios;
     }
 
     @PostConstruct
