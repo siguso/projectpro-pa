@@ -71,7 +71,7 @@ table#users.dataTables_wrapper .dataTables_paginate .paginate_button.current,
     color: #00abc5 !important;
 }*/
 #users a i{
-    color: #00abc5;
+    color: black;
 }
 #users a i:hover{
     color: white;

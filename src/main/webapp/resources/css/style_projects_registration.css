@@ -5,6 +5,12 @@
 
 body{
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal{ 
+    max-height: 100% !important ; 
+    overflow-y: hidden !important ;
 }
 
 /********** growl **********/
@@ -20,43 +26,6 @@ body{
     background-color: #fff;
 }
 /***************************/
-
-/********** header1 **********/
-.nav1 .nav-wrapper{
-    background-color: #333333;
-    border-bottom: 3px solid #007ce0;
-}
-.nav1 .nav-wrapper .brand-logo{
-    padding-left: 55px;
-    /*font-size: 25px;*/
-}
-.nav1 .nav-wrapper #nav-mobile li:hover{
-    background: #00abc5;
-}
-.nav1 .nav-wrapper #nav-mobile .user{
-   margin-right: 15px;
-}
-.nav1 .nav-wrapper #nav-mobile li a{
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.nav1 .nav-wrapper .menu{
-    padding-left: 18px;
-    margin-bottom: 5px;
-}
-.nav1 .nav-wrapper #nav-mobile li img{
-    height: 40px;
-    width: 40px;
-    margin-top: 10px;
-    margin-right: 5px;
-    margin-bottom: -13px;
-}
-.nav1 .nav-wrapper .left img{
-    height: 40px;
-    width: 200px;
-    margin-top: 10px;
-}
-/*****************************/
 
 /********** menu lateral movil **********/
 .contenedor-menu2{
@@ -155,27 +124,6 @@ body{
 }
 /***************************/
 
-/********** menu desplegable **********/
-#login-form img{
-    height: 90px;
-    width: 90px;
-}
-#login-form{
-    /*height: 130px;*/
-    width: 250px;
-}
-/********** boton **********/
-#login-form .btn{
-    background-color: #00abc5;
-}
-#login-form .btn:hover{
-    background-color: #bdbdbd;
-}
-#login-form .btn{
-    width: 100%;
-}
-/*********************************/
-
 /********** boton up **********/
 .up{
     position: fixed;
@@ -186,45 +134,69 @@ body{
 
 /********** text box **********/
 /* label color */
-.section .forms label{
+.section .form_project_registration label{
     color:  #000;
 }
 /* label focus color */
-.section .forms .input-field input[type=email]:focus + label,
-.section .forms .input-field input[type=password]:focus + label,
-.section .forms .input-field input[type=text]:focus + label,
-.section .forms .input-field input[type=tel]:focus + label,
-.section .forms .input-field textarea:focus + label{    
+.section .form_project_registration .input-field input[type=email]:focus + label,
+.section .form_project_registration .input-field input[type=password]:focus + label,
+.section .form_project_registration .input-field input[type=text]:focus + label,
+.section .form_project_registration .input-field input[type=tel]:focus + label,
+.form_project_registration .input-field textarea:focus + label{    
     color:  #00abc5;
 }
 /* label underline focus color */
-.section .forms .input-field input[type=email]:focus,
-.section .forms .input-field input[type=password]:focus,
-.section .forms .input-field input[type=text]:focus,
-.section .forms .input-field input[type=tel]:focus,
-.section .forms .input-field textarea:focus{
+.section .form_project_registration .input-field input[type=email]:focus,
+.section .form_project_registration .input-field input[type=password]:focus,
+.section .form_project_registration .input-field input[type=text]:focus,
+.section .form_project_registration .input-field input[type=tel]:focus,
+.section .form_project_registration .input-field textarea:focus{
     border-bottom: 1px solid  #00abc5;
     box-shadow: 0 1px 0 0  #00abc5;
 }
-.section .forms .input-field .prefix.active {
+.section .form_project_registration .input-field .prefix.active {
+    color: #00abc5;
+}
+.select-wrapper ul li>span {
     color: #00abc5;
 }
 /******************************/
 
 /********** botones **********/
-.section .btn{
+.form_project_registration .btn{
     background-color: #00abc5;
 }
-.section .btn:hover{
+.form_project_registration .btn:hover{
     background-color: #bdbdbd;
 }
-.section .btn{
+.form_project_registration .btn{
     width: 100%;
 }
-.section .archivo{
+.form_project_registration .archivo{
     width: 30%;
 }
 /****************************/
+
+/********** tabs **********/
+.tab_datos_proyecto .tabs .tab a{
+    color: #00abc5;
+}
+.tab_datos_proyecto .tabs .tab a:hover {
+    background: #bdbdbd;
+    color: white;
+}
+.tab_datos_proyecto .tabs .tab a.active {
+    background: #00abc5;
+    color: white;
+}
+.tab_datos_proyecto .tabs .tab a:focus.active {
+    background: #00abc5;
+    color: white;
+}
+.tab_datos_proyecto .tabs .indicator {
+    background: #00abc5;
+}
+/***************************/
 
 /********** scrollbar **********/
 *::-webkit-scrollbar {

@@ -2,12 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
         <ui:composition template="WEB-INF/templates/plantilla.xhtml">
-            
+
             <ui:define name="content">
                 <section id="general">
                     <div id="wrapper">
@@ -69,7 +70,7 @@
                                         <li><div class="divider"></div></li>   
                                         <li><a href="#" class="waves-effect waves-light">PUBLICACIÓN<i class="material-icons right">expand_more</i></a>
                                             <ul>
-                                                <li><a href="projects_registration.xhtml">Registrar Proyecto<i class="material-icons left">book</i></a></li>
+                                                <li><a href="projects_registration_1.xhtml">Registrar Proyecto<i class="material-icons left">book</i></a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -77,7 +78,7 @@
                             </ul>
                         </div>
                         <!-- fin sidebar -->
-                        
+
                         <!-- social bar -->
                         <div class="social-bar">
                             <a href="https://www.facebook.com/Projectpro.co" class="icon icon-facebook" target="_blank" />
@@ -86,7 +87,7 @@
                             <a href="https://www.instagram.com/project.pro.co/" class="icon icon-instagram" target="_blank" />
                         </div>
                         <!-- fin social bar -->
-                        
+
                         <!-- cuerpo principal -->
                         <main class="main">
 
@@ -132,6 +133,7 @@
                                 <div class="row">
                                     <div id="nav3">
                                         <nav class="nav3">
+                                            <h:form>
                                             <div class="nav-wrapper">
                                                 <ul class="menu3 col s12 l12">
                                                     <!-- Dropdown Trigger -->
@@ -149,6 +151,7 @@
                                                     </div>
                                                 </ul>
                                             </div>
+                                            </h:form>
                                         </nav>
                                         <ul id="categoria" class="dropdown-content">
                                             <li><a href="#!">Categoría 1</a></li>
@@ -395,17 +398,17 @@
                         <!-- fin paginacion -->
                     </div>
                 </section>    
-                
+
                 <!-- boton up -->
                 <div class="up fixed-action-btn">
                     <a class="btn-floating btn-large waves-effect waves-light z-depth-3 #00b8d4 cyan accent-4 pulse"><i class="material-icons">expand_less</i></a>
                 </div>
                 <!-- fin boton up -->
 
-                
+
             </ui:define>
 
         </ui:composition>
-        
+
     </body>
 </html>

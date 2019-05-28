@@ -33,6 +33,10 @@ $(document).ready(function(){
     });
     
     $('.materialboxed').materialbox();
+    
+    $('.tabs').tabs();
+    
+    $('input#input_text, textarea#textarea2').characterCounter();
 
 });
 
@@ -246,7 +250,7 @@ $(document).ready( function () {
         }
     } );
     $("select").val('10');
-    $('select').addClass("browser-default");
-    $('select').material_select();
+    /*$('select').addClass("browser-default");*/
+    /*$('select').material_select();*/
 } );
 /********************************/

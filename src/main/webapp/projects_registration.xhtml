@@ -1,95 +1,151 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>ProjectPRO</title>
-        <link rel="shortcut icon" href="resources/img/LogoIcon.ico" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-        <link href="resources/css/style_projects_registration.css" rel="stylesheet" type="text/css"/>
-        <link href="resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
-        <link href="resources/css/jquerywebui-popover.css" rel="stylesheet" type="text/css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </h:head>
-    <h:body>
-        <!-- barra de navegación -->
-        <header class="header1">
-            <div class="nav1 navbar-fixed">
-                <nav> 
-                    <div class="nav-wrapper">
-                        <ul class="left">
-                            <a href="#!" class="brand-logo tooltipped" data-position="bottom" data-tooltip="ProjectPRO. Grandes ideas, grandes proyectos"><img src="resources/img/logoWBirrete5.png" alt=""/></a>
-                            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                        </ul>                                             
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li class="waves-effect waves-light"><a href="projects.xhtml"><i class="material-icons left">home</i>Inicio</a></li>
-                            <li class="waves-effect waves-light"><a href="#"><i class="material-icons left">help</i>Acerca</a></li>                     
-                            <li class="user waves-effect waves-light"><a id="login" href="#"><img src="resources/img/user_photo.png" alt=""/></a></li>  
-                        </ul>
-                    </div>                                     
-                </nav>
-            </div>
-        </header>
-        <!-- fin barra de navegación -->
-        
-        <section id="general">
-            <!-- cuerpo principal -->
-            <main class="main">
 
-                <!-- contenido -->
-                <section id="contenido">
-                    <div class="section container-fluid">
-                        <div class="row forms">
-                            <div class="col s12 m12 l11 offset-l1">
-                                <blockquote>
-                                    <h4>REGISTRO DE PROYECTOS</h4>
-                                    <h6>(*)Dato requerido</h6>
-                                </blockquote>
-                            </div>     
-                            <h:form class="col s12 m12 l10 offset-l1">
-                                <p:growl />
-                                <div class="row">                                                                                                                                        
-                                    <div class="input-field col s12 m6 l4 offset-l2">
-                                        <i class="material-icons prefix">title</i>
-                                        <h:inputText id="title" required="true" value="" requiredMessage="Titulo es requerido" />
-                                        <h:outputLabel for="title" value="Titulo(*)"/>
+    <body>
+
+        <ui:composition template="./WEB-INF/templates/plantilla.xhtml">
+
+            <ui:define name="content">
+
+                <div class="container col s12 m12 l11 offset-l1">
+                    <blockquote>
+                        <h4>REGISTRO DE PROYECTOS</h4>
+                        <h6>(*)Dato requerido</h6>
+                    </blockquote>
+                </div>  
+
+                <div class="row container tab_datos_proyecto">
+                    <div class="card-panel col s12">
+                        <ul class="tabs tabs-fixed-width">
+                            <li class="tab col s3"><a class="active" href="#tab_datos_basicos">Datos Basicos</a></li>
+                            <li class="tab col s3"><a href="#tab_anexos">Anexos</a></li>
+                        </ul>
+                    </div>
+                    <div id="tab_datos_basicos" class="col s12">
+                        <br></br>
+                        <div class="section container-fluid">
+                            <div class="row form_project_registration">
+                                <h:form class="col s12 m12 l12">
+                                    <p:growl />
+                                    <div class="row"> 
+                                        <div class="input-field col s12 m6 l5 offset-l1">
+                                            <i class="material-icons prefix">title</i>
+                                            <h:inputText id="title" required="true" value="" requiredMessage="Titulo es requerido" />
+                                            <h:outputLabel for="title" value="Titulo(*)"/>
+                                        </div>
+                                        <div class="input-field col s12 m6 l5">  
+                                            <i class="material-icons prefix">security</i>
+                                            <h:selectOneMenu value="" id="licencia" required="true" requiredMessage="Tipo de licencia es requerida"> 
+                                                <f:selectItem itemValue = "" itemLabel = "Tipo de Licencia(*)" itemDisabled="true" /> 
+                                                <f:selectItem itemValue = "1" itemLabel = "Libre" />
+                                                <f:selectItem itemValue = "2" itemLabel = "Privada" /> 
+                                            </h:selectOneMenu> 
+                                        </div>
+                                        <div class="input-field col s12 m11 l4 offset-l1">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <h:inputText id="autor1" required="true" value="" disabled="true" requiredMessage="1er autor es requerido" />
+                                            <h:outputLabel for="autor1" value="1er Autor(*)"/>
+                                        </div>
+                                        <div class="input-field col s12 m11 l1">
+                                            <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >
+                                                <i class="material-icons center">person_add</i>
+                                            </a>
+                                        </div>
+                                        <div class="input-field col s12 m11 l4">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <h:inputText id="autor2" required="true" value="" disabled="true" requiredMessage="2do autor es requerido" />
+                                            <h:outputLabel for="autor2" value="2do Autor(*)"/>
+                                        </div>
+                                        <div class="input-field col s12 m11 l1">
+                                            <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >
+                                                <i class="material-icons center">person_add</i>
+                                            </a>
+                                        </div>
+                                        <div class="input-field col s12 m11 l4 offset-l1">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <h:inputText id="autor3" required="" value="" disabled="true" requiredMessage="3er autor es requerido" />
+                                            <h:outputLabel for="autor3" value="3er Autor"/>
+                                        </div>
+                                        <div class="input-field col s12 m11 l1">
+                                            <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >
+                                                <i class="material-icons center">person_add</i>
+                                            </a>
+                                        </div>
+                                        <div class="input-field col s12 m11 l4">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <h:inputText id="autor4" required="" value="" disabled="true" requiredMessage="4to autor es requerido" />
+                                            <h:outputLabel for="autor4" value="4to Autor"/>
+                                        </div>
+                                        <div class="input-field col s12 m11 l1">
+                                            <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >
+                                                <i class="material-icons center">person_add</i>
+                                            </a>
+                                        </div>
+                                        <div class="input-field col s12 m6 l8 offset-l2">
+                                            <i class="material-icons prefix">collections_bookmark</i>
+                                            <h:selectManyListbox class="" value="#{usuarioController.usuario}" id="categorias" required="true" requiredMessage="Categoria es requerida">
+                                                <f:selectItem itemValue = "" itemLabel = "Categorias(*)" itemDisabled="true" /> 
+                                                <f:selectItems value="#{usuarioController.usuarios}" var="usu" itemValue="#{usu.cod_usuario}" itemLabel="#{usu.nom1}"></f:selectItems>
+                                                <!--<f:selectItem itemValue = "" itemLabel = "Categorias(*)" itemDisabled="true" /> 
+                                                <f:selectItem itemValue = "1" itemLabel = "Categoria 1" />
+                                                <f:selectItem itemValue = "2" itemLabel = "Categoria 2" /> 
+                                                <f:selectItem itemValue = "3" itemLabel = "Categoria 3" /> 
+                                                <f:selectItem itemValue = "4" itemLabel = "Categoria 4" />--> 
+                                            </h:selectManyListbox>
+                                        </div>
+                                        <div class="input-field col s12 l8 offset-l2">
+                                            <i class="material-icons prefix">create</i>
+                                            <p:inputTextarea id="descripcion" required="true" value="" requiredMessage="Descripción es requerida" rows="6" counter="display" maxlength="500" counterTemplate="{0} Caracteres restantes" />
+                                            <h:outputLabel for="descripcion" value="Descripción(*)"/>
+                                            <br />
+                                            <h:outputText id="display" class="right" style="font-size: 11px" />
+                                            <span class="helper-text">Descripción debe contener máximo 500 caracteres</span>
+                                        </div>
+                                    </div> 
+                                    <div class="row card-panel">
+                                        <div class="input-field col s12 m11 l5 offset-l1"> 
+                                            <i class="material-icons prefix">work</i>
+                                            <h:selectOneMenu class="" value="" id="carrera" required="true" requiredMessage="Autor es requerido"> 
+                                                <f:selectItem itemValue = "" itemLabel = "Carrera(*)" itemDisabled="true" /> 
+                                                <f:selectItem itemValue = "1" itemLabel = "Tecnologia en Desarrollo de Software" />
+                                                <f:selectItem itemValue = "2" itemLabel = "Ingenieria de Sistemas" /> 
+                                                <f:selectItem itemValue = "3" itemLabel = "Ingenieria Industrial" /> 
+                                                <f:selectItem itemValue = "4" itemLabel = "Ingenieria Ambiental" /> 
+                                            </h:selectOneMenu> 
+                                        </div>
+                                        <div class="input-field col s12 m11 l5">  
+                                            <i class="material-icons prefix">blur_linear</i>
+                                            <h:selectOneMenu class="" value="" id="semestre" required="true" requiredMessage="Semestre es requerido"> 
+                                                <f:selectItem itemValue = "" itemLabel = "Semestre(*)" itemDisabled="true" /> 
+                                                <f:selectItem itemValue = "1" itemLabel = "1er Semestre" />
+                                                <f:selectItem itemValue = "2" itemLabel = "2do Semestre" /> 
+                                                <f:selectItem itemValue = "3" itemLabel = "3er Semestre" />
+                                                <f:selectItem itemValue = "4" itemLabel = "4to Semestre" /> 
+                                                <f:selectItem itemValue = "5" itemLabel = "5to Semestre" />
+                                                <f:selectItem itemValue = "6" itemLabel = "6to Semestre" /> 
+                                            </h:selectOneMenu> 
+                                        </div>
                                     </div>
-                                    <div class="input-field col s12 m6 l4"> 
-                                        <i class="material-icons prefix">group</i>
-                                        <h:selectOneMenu value="" id="autor" required="true" requiredMessage="Autor es requerido"> 
-                                            <f:selectItem itemValue = "" itemLabel = "Autor/es(*)" /> 
-                                            <f:selectItem itemValue = "1" itemLabel = "Autor 1" />
-                                            <f:selectItem itemValue = "2" itemLabel = "Autor 2" /> 
-                                            <f:selectItem itemValue = "3" itemLabel = "Autor 3" /> 
-                                            <f:selectItem itemValue = "4" itemLabel = "Autor 4" /> 
-                                        </h:selectOneMenu> 
-                                    </div>
-                                    <div class="input-field col s12 m6 l4 offset-l2">  
-                                        <i class="material-icons prefix">verified_user</i>
-                                        <h:selectOneMenu value="" id="licencia" required="true" requiredMessage="Tipo de licencia es requerida"> 
-                                            <f:selectItem itemValue = "" itemLabel = "Tipo de Licencia(*)" /> 
-                                            <f:selectItem itemValue = "1" itemLabel = "Libre" />
-                                            <f:selectItem itemValue = "2" itemLabel = "Privada" /> 
-                                        </h:selectOneMenu> 
-                                    </div>
-                                    <div class="input-field col s12 m6 l4">
-                                        <i class="material-icons prefix">collections_bookmark</i>
-                                        <h:selectOneMenu value="" id="categorias" required="true" requiredMessage="Categoria es requerida"> 
-                                            <f:selectItem itemValue = "" itemLabel = "Categorias(*)" /> 
-                                            <f:selectItem itemValue = "1" itemLabel = "Categoria 1" />
-                                            <f:selectItem itemValue = "2" itemLabel = "Categoria 2" /> 
-                                            <f:selectItem itemValue = "3" itemLabel = "Categoria 3" /> 
-                                            <f:selectItem itemValue = "4" itemLabel = "Categoria 4" /> 
-                                        </h:selectOneMenu> 	
-                                    </div>
-                                    <div class="input-field col s12 m6 l4 offset-l2">
+                                </h:form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="tab_anexos" class="col s12">
+                        <br></br>
+                        <div class="section container-fluid">
+                            <div class="row form_project_registration">
+                                <h:form class="col s12 m12 l12">
+                                    <p:growl />
+                                    <div class="input-field col s12 m6 l5 offset-l1">
                                         <div class="file-field input-field">
                                             <div class="btn archivo">
-                                                <span>Imagen</span>
+                                                <span>Logo</span>
                                                 <input type="file" name="img[]" accept="image/*"/>
                                             </div>
                                             <div class="file-path-wrapper">
@@ -97,10 +153,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="input-field col s12 m6 l4">
+                                    <div class="input-field col s12 m6 l5 ">
                                         <div class="file-field input-field">
                                             <div class="btn archivo">
-                                                <span>pdf</span>
+                                                <span>Anexo A</span>
                                                 <input type="file" name="pdf[]" accept="application/pdf" />
                                             </div>
                                             <div class="file-path-wrapper">
@@ -108,146 +164,70 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="input-field col s12 l8 offset-l2">
-                                        <i class="material-icons prefix">create</i>
-                                        <h:inputTextarea id="descripcion" required="true" value="" requiredMessage="Descripción es requerida" styleClass="max" />
-                                        <h:outputLabel for="descripcion" value="Descripción(*)"/>
+                                    <div class="input-field col s12 m6 l5 offset-l1">
+                                        <div class="file-field input-field">
+                                            <div class="btn archivo">
+                                                <span>Anexo B</span>
+                                                <input type="file" name="pdf[]" accept="application/pdf" />
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" name="pdf[]" placeholder="Selecciona un archivo(*)" type="text"/>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="input-field col s12 l8 offset-l2">
-                                        <p class="right">Descripción debe contener máximo 255 caracteres</p>
+                                    <div class="input-field col s12 m6 l5">
+                                        <div class="file-field input-field">
+                                            <div class="btn archivo">
+                                                <span>Casos de Uso</span>
+                                                <input type="file" name="pdf[]" accept="application/pdf" />
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" name="pdf[]" placeholder="Selecciona un archivo(*)" type="text"/>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="input-field col s12 l4 offset-l2">
-                                        <h:commandLink value="Registrar proyecto" styleClass="btn waves-effect waves-light" />
+                                    <div class="input-field col s12 m6 l5 offset-l1">
+                                        <div class="file-field input-field">
+                                            <div class="btn archivo">
+                                                <span>Diagramas</span>
+                                                <input type="file" name="pdf[]" accept="application/pdf" />
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" name="pdf[]" placeholder="Selecciona un archivo(*)" type="text"/>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="input-field col s12 l4">
-                                        <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>
+                                    <div class="input-field col s12 m6 l5">
+                                        <div class="file-field input-field">
+                                            <div class="btn archivo">
+                                                <span>Código</span>
+                                                <input type="file" name="zip[]" accept="application/zip" />
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" name="zip[]" placeholder="Selecciona un archivo(*)" type="text"/>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>     
-                            </h:form>
-                        </div>
-                    </div>
-                </section>
-                <!-- fin contenido -->                    
-                    
-            </main>
-            <!-- fin cuerpo principal -->
-
-            <!-- footer -->
-            <footer class="page-footer blue-grey darken-3">
-                <!--<div class="container">
-                    <div class="row">
-                        <div class="col l6 s12">
-                            <h5 class="white-text">ProjectPRO</h5>
-                            <p class="grey-text text-lighten-4">Grandes ideas, grandes proyectos.</p>
-                        </div>
-                        <div class="col l4 offset-l2 s12">
-                            © ProjectPRO - Grupo PA Sem VI Sec9 2019-1 <br></br>
-                            @sguevara @rdtorres @jlmacias @lserna
-                        </div>
-                    </div>
-                </div>-->
-                <div class="container center-align">
-                    <div class="row">
-                        <div class="col l3 m3 s6">
-                            <h5 class="white-text">Creación</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="user_registration.xhtml">Usuarios</a></li>
-                                <li><a class="grey-text text-lighten-3" href="projects_registration.xhtml">Proyectos</a></li>
-                            </ul>
-                        </div>
-                        <div class="col l3 m3 s6">
-                            <h5 class="white-text">Visualizar</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="projects.xhtml">Proyectos</a></li>
-                                <li><a class="grey-text text-lighten-3" href="admin_user.xhtml">Usuarios</a></li>
-                            </ul>
-                        </div>
-                        <div class="col l3 m3 s6">
-                            <h5 class="white-text">Actualización</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="update_user_data.xhtml">Usuarios</a></li>
-                                <li><a class="grey-text text-lighten-3" href="password_recovery.xhtml">Contraseña</a></li>
-                            </ul>
-                        </div>
-                        <div class="col l3 m3 s6">
-                            <h5 class="white-text">Eliminar</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="admin_user.xhtml">Usuarios</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-copyright blue-grey darken-4 valign-wrapper">
-                    <div class="container">
-                        Crea tu proyecto de negocio a partir de tus ideas y marca la diferencia
-                        <br></br>
-                        © 2014 Copyright Text
-                    </div>
-                </div>
-            </footer>
-            <!-- fin footer -->
-                
-        </section>       
-        
-        <!-- inicio sidebar movil -->
-        <section id="menu-lateral-movil">
-            <ul id="slide-out" class="sidenav">
-                <div class="contenedor-menu2">
-                    <li>
-                        <div class="user-view">
-                            <div class="background">
-                                <img src="resources/img/md1.png" class="responsive-img"/>
+                                </h:form>
                             </div>
-                            <a href="#user"><img class="circle" src="resources/img/user_photo.png"/></a>
-                            <span class="name">John Doe</span>
-                            <span class="email">jdandturk@gmail.com</span>
                         </div>
-                    </li>                    
-                    <ul class="menu2">
-                        <li><a href="projects.xhtml" class="waves-effect waves-light">Inicio<i class="material-icons left">home</i></a></li>
-                        <li><a href="#" class="waves-effect waves-light">Acerca<i class="material-icons left">help</i></a></li>
-                        <li><a href="#" class="waves-effect waves-light">Cerrar Sesión<i class="material-icons left">do_not_disturb_alt</i></a></li>
-                    </ul>  
-                </div>
-            </ul>
-        </section>
-        <!-- fin sidebar movil -->
-        
-        <!-- login desplegable -->
-        <div id="login-form" class="webui-popover-content">
-            <div class="row desplegable">
-                <form class="col s12 m12 l12" action="" method="post">
-                    <div class="input-field center">
-                        <img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/>
                     </div>
-                    <div class="input-field center">
-                        <span class="black-text name">John Doe</span>
-                    </div>
-                    <div class="input-field center">
-                        <span class="black-text email">jdandturk@gmail.com</span>
-                    </div>
-                    <div class="input-field col l12">
-                        <a class="waves-effect waves-light btn" href="user_registration.xhtml">
-                            <i class="material-icons right">do_not_disturb_alt</i>Cerrar Sesión
-                        </a>
-                    </div>
-                </form>
-            </div> 
-        </div>
-        <!-- fin login desplegable -->
-        
-        <!-- boton up -->
-        <div class="up">
-            <a class="btn-floating btn-large waves-effect waves-light z-depth-3 #00b8d4 cyan accent-4 pulse"><i class="material-icons">expand_less</i></a>
-        </div>
-        <!-- fin boton up -->
-        
-        <script src="resources/js/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="resources/js/materialize.min.js" type="text/javascript"></script>
-        <script src="resources/js/jquerywebui-popover.js" type="text/javascript"></script>
-        <script src="resources/js/scripts.js" type="text/javascript"></script>
-        
-    </h:body>
-</html>
 
+                    <div class="row form_project_registration">
+                        <h:form>
+                            <div class="input-field col s12 l6">
+                                <h:commandLink value="Registrar proyecto" styleClass="btn waves-effect waves-light" />
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

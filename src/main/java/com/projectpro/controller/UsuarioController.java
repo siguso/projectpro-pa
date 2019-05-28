@@ -37,7 +37,7 @@ public class UsuarioController implements Serializable {
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
-
+    
     @PostConstruct
     public void init(){
         usuario = new Usuario();
@@ -67,4 +67,7 @@ public class UsuarioController implements Serializable {
         }
     }
    
+    /*public void asignar(Usuario usuario){
+        this.usuario = usuario;
+    }*/
 }

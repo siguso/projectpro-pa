@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/templates/plantilla.xhtml">
+
+            <ui:define name="content">
+                <!-- contenido -->
+                <div class="section container">
+                    <div class="row">
+                        <div class="row form_grupo">
+                            <h:form  class="col s12 m9 l8 offset-l2">
+                                <p:growl />
+                                <div class="row">
+                                    <div class="col s12 m10 l8 offset-l2">
+                                        <blockquote>
+                                            <h4>CREAR GRUPO DE PROYECTO</h4>
+                                            <h6>(*)Dato requerido</h6>
+                                        </blockquote>
+                                    </div>  
+                                    <div class="input-field col s12 m11 l6 offset-l2">
+                                        <i class="material-icons prefix">title</i>
+                                        <h:inputText id="name" required="true" value="" requiredMessage="Nombre es requerido" />
+                                        <h:outputLabel for="name" value="Nombre del Grupo(*)"/>
+                                    </div>
+                                    <div class="input-field col s12 m11 l6 offset-l2">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <h:inputText id="autor1" required="" value="#{grupoController.usuario.nom1} #{grupoController.usuario.nom2} #{grupoController.usuario.apell1} #{grupoController.usuario.apell2}" 
+                                                     requiredMessage="1er autor es requerido" />
+                                        <h:outputLabel for="autor1" value="1er Autor(*)"/>
+                                    </div>
+                                    <div class="input-field col s12 m11 l2">
+                                        <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
+                                    </div>
+                                    <div class="input-field col s12 m11 l6 offset-l2">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <h:inputText id="autor2" required="true" value="" requiredMessage="2do autor es requerido" />
+                                        <h:outputLabel for="autor2" value="2do Autor(*)"/>
+                                    </div>
+                                    <div class="input-field col s12 m11 l2">
+                                        <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
+                                    </div>
+                                    <div class="input-field col s12 m11 l6 offset-l2">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <h:inputText id="autor3" required="" value="" requiredMessage="" />
+                                        <h:outputLabel for="autor3" value="3er Autor"/>
+                                    </div>
+                                    <div class="input-field col s12 m11 l2">
+                                        <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
+                                    </div>
+                                    <div class="input-field col s12 m11 l6 offset-l2">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <h:inputText id="autor4" required="" value="" requiredMessage="" />
+                                        <h:outputLabel for="autor4" value="4to Autor"/>
+                                    </div>
+                                    <div class="input-field col s12 m11 l2">
+                                        <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
+                                    </div>
+                                    <div class="input-field col s12 m11 l8 offset-l2">
+                                        <h:commandLink value="Crear grupo" styleClass="btn waves-effect waves-light" />
+                                    </div>                   
+                                    <div class="input-field col s12 m11 l8 offset-l2">
+                                        <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>
+                                    </div>           
+                                </div>     
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
