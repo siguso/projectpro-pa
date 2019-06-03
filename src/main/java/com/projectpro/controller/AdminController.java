@@ -7,15 +7,15 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 @Named
-@SessionScoped
-public class UsuarioController implements Serializable {
-
+@ViewScoped
+public class AdminController implements Serializable{
+    
     @EJB
     private UsuarioFacadeLocal usuarioEJB;
     private Usuario usuario;
@@ -45,13 +45,14 @@ public class UsuarioController implements Serializable {
     public void setSelectUser(Usuario SelectUser) {
         this.SelectUser = SelectUser;
     }
-
+    
+    
     @PostConstruct
     public void init() {
         usuario = new Usuario();
         usuarios = usuarioEJB.findAll();
     }
-
+    
     public void registrar() {
         try {
             TipoUsuario a = new TipoUsuario();
@@ -64,12 +65,7 @@ public class UsuarioController implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Registro no Realizado!", ""));
         }
     }
-
-    public String modificar(Usuario usuario) {
-        this.usuario = usuario;
-        return "update_user_data";
-    }
-
+    
     public void modificar() {
         try {
             usuarioEJB.edit(usuario);
@@ -78,9 +74,5 @@ public class UsuarioController implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Modificación no Realizada!", ""));
         }
     }
-
-    /*public void asignar(Usuario usuario){
-        this.usuario = usuario;
-    }*/
     
 }

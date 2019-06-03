@@ -142,7 +142,7 @@ body{
 .section .form_project_registration .input-field input[type=password]:focus + label,
 .section .form_project_registration .input-field input[type=text]:focus + label,
 .section .form_project_registration .input-field input[type=tel]:focus + label,
-.form_project_registration .input-field textarea:focus + label{    
+.section .form_project_registration .input-field textarea:focus + label{    
     color:  #00abc5;
 }
 /* label underline focus color */
@@ -159,6 +159,10 @@ body{
 }
 .select-wrapper ul li>span {
     color: #00abc5;
+}
+.section .form_project_registration .input-field textarea{
+    border-bottom: 0px solid;
+    box-shadow: 0 1px 0 0;
 }
 /******************************/
 

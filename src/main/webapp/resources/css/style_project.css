@@ -103,6 +103,40 @@ body{
 }
 /********** fin header3 **********/
 
+/********** navbar3 **********/
+/*.ui-menubar{
+    height: 60px;
+}
+.ui-menubar,.ui-menu {
+    background: #bdbdbd !important;
+    border: none;
+}
+.ui-menu-child{
+    background: white !important;
+    box-shadow: none;
+}
+.ui-menuitem-active>a{
+    background: #00abc5 !important; 
+    color: white !important;
+}
+.ui-menuitem-active>a:hover{
+    box-shadow: none;
+}
+.ui-menuitem{
+    margin-left: 20px;
+    margin-top: 10px !important;
+}
+.ui-sticky {
+    top: 64px !important;
+    box-shadow: none;
+}
+@media (max-width: 960px) {
+    .ui-sticky {
+        top: 110px !important;
+    }
+}*/
+/******************************/
+
 /********** menu lateral movil **********/
 .contenedor-menu2{
     width: 119%;
@@ -292,7 +326,7 @@ body{
     top:64px;
 }
 .anti-salto{
-    margin-top: 70px;
+    margin-top: 10px;
 }
 .menu-fixed2{
     z-index:1000;

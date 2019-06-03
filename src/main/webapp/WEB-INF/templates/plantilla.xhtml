@@ -19,13 +19,14 @@
         <link href="resources/css/style_update_user_data.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/style_create_group.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/style_group_user_list.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/style_admin_user.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/style_projects_registration.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/jquerywebui-popover.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/font.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
         <link href="../resources/css/social.css" rel="stylesheet" type="text/css"/>
-        
+
         <f:event type="preRenderView" listener="#{plantillaController.verificarSesion()}" />
     </h:head>
 
@@ -53,36 +54,39 @@
                                     </form>                    
                                 </div>
                                 <h:form>
-                                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                                    <li class="waves-effect waves-light"><h:commandLink value="Inicio" action="/projects?faces-redirect=true"><i class="material-icons left">home</i></h:commandLink></li>
-                                    <!--<li class="waves-effect waves-light"><a href="#"><i class="material-icons left">home</i>Inicio</a></li>-->
-                                    <li><a href="#" class="dropdown-trigger2" data-target="grupo"><i class="material-icons left">group</i>Grupo</a></li>
-                                    <li><a href="#" class="dropdown-trigger2" data-target="publicacion"><i class="material-icons left">book</i>Publicación</a></li>
-                                    <li><a href="#"><i class="material-icons left">help</i>Acerca</a></li>
-                                    <li class="user"><a id="login" href="#"><img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/></a></li>  
-                                </ul>
+                                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                        <li class="waves-effect waves-light"><h:commandLink value="Inicio" action="/projects?faces-redirect=true"><i class="material-icons left">home</i></h:commandLink></li>
+                                        <!--<li class="waves-effect waves-light"><a href="#"><i class="material-icons left">home</i>Inicio</a></li>-->
+                                        <li><a href="#" class="dropdown-trigger2" data-target="grupo"><i class="material-icons left">group</i>Grupo</a></li>
+                                        <li><a href="#" class="dropdown-trigger2" data-target="publicacion"><i class="material-icons left">book</i>Publicación</a></li>
+                                        <li><a href="#" class="dropdown-trigger2" data-target="usuarios"><i class="material-icons left">account_box</i>Usuarios</a></li>
+                                        <li><a href="#"><i class="material-icons left">help</i>Acerca</a></li>
+                                        <li class="user"><a id="login" href="#"><img src="resources/img/user_photo.png" class="circle responsive-img" alt=""/></a></li>  
+                                    </ul>
+                                    <ul id="grupo" class="dropdown-content">
+                                        <li><a href="#grupo_modal" class="modal-trigger"><i class="material-icons left">group_add</i>Crear Grupo</a></li>
+                                        <!--<li><h:commandLink value="Crear grupo" action="/create_group?faces-redirect=true"><i class="material-icons left">group_add</i></h:commandLink></li>-->
+                                        <li><a href="#!"><i class="material-icons left">contacts</i>Ver Grupo</a></li>
+                                    </ul>
+                                    <ul id="publicacion" class="dropdown-content">
+                                        <li><h:commandLink value="Registrar Proyecto" action="/projects_registration?faces-redirect=true"><i class="material-icons left">description</i></h:commandLink></li>
+                                        <!--<li><a href="#!"><i class="material-icons left">description</i>Registrar Proyecto</a></li>-->
+                                    </ul>
+                                    <ul id="usuarios" class="dropdown-content">
+                                        <li><h:commandLink value="Lista de Usuarios" action="/admin_user?faces-redirect=true"><i class="material-icons left">assignment_ind</i></h:commandLink></li>
+                                    </ul>
                                 </h:form>
                             </div>   
                         </nav>
-                        <h:form>
-                            <ul id="grupo" class="dropdown-content">
-                                <li><a href="#grupo_modal" class="modal-trigger"><i class="material-icons left">group_add</i>Crear Grupo</a></li>
-                                <!--<li><h:commandLink value="Crear grupo" action="/create_group?faces-redirect=true"><i class="material-icons left">group_add</i></h:commandLink></li>-->
-                                <li><a href="#!"><i class="material-icons left">contacts</i>Ver Grupo</a></li>
-                            </ul>
-                            <ul id="publicacion" class="dropdown-content">
-                                <li><h:commandLink value="Registrar Proyecto" action="/projects_registration?faces-redirect=true"><i class="material-icons left">description</i></h:commandLink></li>
-                                <!--<li><a href="#!"><i class="material-icons left">description</i>Registrar Proyecto</a></li>-->
-                            </ul>
-                        </h:form>
                     </div>
                 </header>
                 <!-- fin barra de navegación -->
-                
+
                 <!-- modal crear_grupo -->
                 <div id="grupo_modal" class="modal form_grupo">
                     <div class="modal-content">
                         <h:form id="formulario3" class="col s12 m9 l8 offset-l2 offset-m2">
+                            <h:inputHidden id="n_autor" />
                             <p:growl />
                             <div class="row">
                                 <div class="col s12 m10 l8 offset-l2">
@@ -93,43 +97,47 @@
                                 </div>  
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">title</i>
-                                    <h:inputText id="name" required="true" value="" requiredMessage="Nombre es requerido" />
+                                    <h:inputText id="name" required="true" value="#{grupoController.grupoEquipo.nombre}" requiredMessage="Nombre es requerido" />
                                     <h:outputLabel for="name" value="Nombre del Grupo(*)"/>
                                 </div>
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <h:inputText id="autor1" required="true" value="" disabled="true" requiredMessage="1er autor es requerido" />
+                                    <p:inputText id="autor1" placeholder="" required="true" readonly="true" requiredMessage="1er autor es requerido" />
+                                    <h:inputHidden id="codAutor1" />
                                     <h:outputLabel for="autor1" value="1er Autor(*)"/>
                                 </div>
                                 <div class="input-field col s12 m11 l2">
-                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
+                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" onclick="javascript:setAutor('1');">AGREGAR</a>
                                 </div>
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <h:inputText id="autor2" required="true" value="" disabled="true" requiredMessage="2do autor es requerido" />
+                                    <p:inputText id="autor2" placeholder="" required="true" readonly="true" requiredMessage="2do autor es requerido" />
+                                    <h:inputHidden id="codAutor2" />
                                     <h:outputLabel for="autor2" value="2do Autor(*)"/>
                                 </div>
                                 <div class="input-field col s12 m11 l2">
-                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
+                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" onclick="javascript:setAutor('2');">AGREGAR</a>
                                 </div>
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <h:inputText id="autor3" required="" value="" disabled="true" />
+                                    <p:inputText id="autor3" placeholder="" required="" readonly="true" />
+                                    <h:inputHidden id="codAutor3" />
                                     <h:outputLabel for="autor3" value="3er Autor"/>
                                 </div>
                                 <div class="input-field col s12 m11 l2">
-                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
+                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" onclick="javascript:setAutor('3');">AGREGAR</a>
                                 </div>
                                 <div class="input-field col s12 m11 l6 offset-l2">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <h:inputText id="autor4" required="" value="" disabled="true" />
+                                    <p:inputText id="autor4" placeholder="" required="" readonly="true" />
+                                    <h:inputHidden id="codAutor4" />
                                     <h:outputLabel for="autor4" value="4to Autor"/>
                                 </div>
                                 <div class="input-field col s12 m11 l2">
-                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" >AGREGAR</a>
+                                    <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal" onclick="javascript:setAutor('4');">AGREGAR</a>
                                 </div>
                                 <div class="input-field col s12 m11 l8 offset-l2">
-                                    <h:commandLink value="Crear grupo" styleClass="btn waves-effect waves-light" />
+                                    <h:commandLink value="Crear grupo" styleClass="btn waves-effect waves-light" actionListener="#{grupoController.registrar()}" />
                                 </div>                   
                                 <div class="input-field col s12 m11 l8 offset-l2">
                                     <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>
@@ -139,7 +147,7 @@
                     </div>
                 </div>
                 <!-- fin modal crear_grupo -->
-               
+
                 <!-- modal listado_usuario -->
                 <div id="listado_usuario_modal" class="modal">
                     <div class="modal-content">
@@ -172,12 +180,9 @@
                                                     <td>#{usu.apell2}</td>
                                                     <td>#{usu.email}</td>
                                                     <td class="center">
-                                                        <!--<a class="modal-close tooltipped" href="#" style="width: 20px" data-tooltip="Agregar autor">
+                                                        <a class="modal-close" href="#" onclick="javascript:selectUser('#{usu.cod_usuario}', '#{usu.nom1} #{usu.nom2} #{usu.apell1} #{usu.apell2}');">
                                                             <i class="material-icons center">person_add</i>
-                                                        </a>-->
-                                                        <h:commandLink class="">
-                                                            <i class="material-icons center">person_add</i>
-                                                        </h:commandLink>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             </c:forEach> 
@@ -185,14 +190,14 @@
                                     </table>
                                 </div>
                                 <div class="input-field col s12 m11 l8 offset-l2">
-                                    <a class="modal-close btn waves-effect waves-light" href="#">REGRESAR</a>
+                                    <a class="modal-close btn waves-effect waves-light" href="#!">REGRESAR</a>
                                 </div>           
                             </div>     
                         </h:form>
                     </div>
                 </div>
                 <!-- fin modal listado_usuario -->
-                
+
                 <!-- login desplegable -->
                 <div id="login-form" class="webui-popover-content">
                     <div class="row desplegable">
@@ -214,7 +219,7 @@
                             <div class="input-field">
                                 <!--<h:commandLink value="ACTUALIZAR DATOS" styleClass="btn waves-effect waves-light" actionListener="#{usuarioController.modificar(usuario)}" action="/update_user_data?faces-redirect=true"  />-->
                                 <a class="modal-trigger btn waves-effect waves-light" href="#update_modal" >ACTUALIZAR DATOS</a>
-                               <!--<h:commandLink value="ACTUALIZAR DATOS" class="btn" action="/update_user_data?faces-redirect=true" />-->
+                                <!--<h:commandLink value="ACTUALIZAR DATOS" class="btn" action="/update_user_data?faces-redirect=true" />-->
                             </div>
                             <div class="input-field">
                                 <h:commandLink value="CERRAR SESIÓN" styleClass="btn waves-effect waves-light" actionListener="#{menuController.cerrarSesion()}" action="/index?faces-redirect=true"  />
@@ -223,7 +228,7 @@
                     </div> 
                 </div>
                 <!-- fin login desplegable -->
-                
+
                 <!-- modal update_user_data -->
                 <div id="update_modal" class="modal">
                     <div class="modal-content">
@@ -295,13 +300,13 @@
                     </div>
                 </div>
                 <!-- fin modal update_user_data -->
-                
+
             </ui:insert>
         </div>
-        
+
         <div id="content" class="center_content">
             <ui:insert name="content">
-                
+
             </ui:insert>
         </div>
 
@@ -320,7 +325,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="footer-copyright blue-grey darken-4 valign-wrapper">
                         <div class="container">
                             Crea tu proyecto de negocio a partir de tus ideas y marca la diferencia
@@ -332,15 +337,17 @@
                 <!-- fin footer -->
             </ui:insert>
         </div>
-        
-        
-        <script src="resources/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+
+        <script src="resources/js/jquery-3.4.1.min.js" type="text/javascript"></script>
         <script src="resources/js/materialize.min.js" type="text/javascript"></script>
         <script src="resources/js/jquerywebui-popover.js" type="text/javascript"></script>
         <script src="resources/js/scripts.js" type="text/javascript"></script>
         <script src="resources/js/cargar_imagen_perfil.js" type="text/javascript"></script>
         <script src="resources/js/jquery.dataTables.min.js" type="text/javascript"></script>
-        
+        <script src="resources/js/cargar_usuario.js" type="text/javascript"></script>
+        <script src="resources/js/pagination.js" type="text/javascript"></script>
+
     </h:body>
 
 </html>

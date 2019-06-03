@@ -26,7 +26,7 @@ $(document).ready(function(){
     
     $('input#input_text, textarea#textarea').characterCounter();
     
-    $('select').formSelect();
+    //$('select').formSelect();
     
     $('#login').webuiPopover({
         url:'#login-form'
@@ -40,11 +40,23 @@ $(document).ready(function(){
 
 });
 
-/*********** cerrar popover **********/
-/*function cerrarse(){ 
-    $("#login-form").webuiPopover('hide');
-} */
-/*************************************/
+/********** select all **********/
+$(document).ready(function() {
+    // $('select').val([1]);
+    $('select').formSelect();
+    $('select.select_all').siblings('ul').prepend('<li id=sm_select_all><span>Seleccionar Todo</span></li>');
+    $('li#sm_select_all').on('click', function () {
+      var jq_elem = $(this), 
+          jq_elem_span = jq_elem.find('span'),
+          select_all = jq_elem_span.text() == 'Seleccionar Todo',
+          set_text = select_all ? 'Seleccionar Ninguno' : 'Seleccionar Todo';
+      jq_elem_span.text(set_text);
+      jq_elem.siblings('li').filter(function() {
+        return $(this).find('input').prop('checked') != select_all;
+      }).click();
+    });
+})
+/**************************/
 
 /********** modal **********/
 $(document).ready(function(){
@@ -74,13 +86,13 @@ $(".toggle-password").click(function() {
 /***************************************/
 
 /********** limitar textarea **********/
-$('textarea.max').keyup(function() {
+/*$('textarea.max').keyup(function() {
     var $textarea = $(this);
     var max = 255;
     if ($textarea.val().length > max) {
         $textarea.val($textarea.val().substr(0, max));
     }
-});
+});*/
 /**************************************/
 
 /********** toggled al hacer click en el menu **********/
@@ -191,6 +203,7 @@ $(document).ready(function () {
             $('#contenido').removeClass('anti-salto');
         }
     });
+    
 });
 /*********************************/
 
@@ -248,9 +261,45 @@ $(document).ready( function () {
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
         }
+
     } );
     $("select").val('10');
     /*$('select').addClass("browser-default");*/
     /*$('select').material_select();*/
 } );
 /********************************/
+
+/********** boton ver **********/
+$(document).on("click",".btnEdit",function(){
+   rowAllDataTables = $(this).closest("tr");
+   id = parseInt(rowAllDataTables.find('td:eq(0)').text());
+   name1 = rowAllDataTables.find('td:eq(1)').text();
+   name2 = rowAllDataTables.find('td:eq(2)').text();
+   apell1 = rowAllDataTables.find('td:eq(3)').text();
+   apell2 = rowAllDataTables.find('td:eq(4)').text();
+   email = rowAllDataTables.find('td:eq(5)').text();
+   pass = rowAllDataTables.find('td:eq(6)').text();
+   phone = rowAllDataTables.find('td:eq(7)').text();
+   $("#name1").val(name1);
+   $("#name2").val(name2);
+   $("#apell1").val(apell1);
+   $("#apell2").val(apell2);
+   $("#email").val(email);
+   $("#pass").val(pass);
+   $("#phone").val(phone);
+});
+/********************************/
+
+/********** paginación proyectos **********/
+$(document).ready(function(){
+  $('#myTable').pageMe({
+    pagerSelector:'#myPager',
+    activeColor: 'blue',
+    prevText:'Anterior',
+    nextText:'Siguiente',
+    showPrevNext:true,
+    hidePageNumbers:false,
+    perPage:10
+  });
+});
+/******************************************/

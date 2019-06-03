@@ -28,21 +28,21 @@ body{
     color:  #000;
 }
 /* label focus color */
-.section .form_grupo .input-field input[type=email]:focus + label,
-.section .form_grupo .input-field input[type=password]:focus + label,
-.section .form_grupo .input-field input[type=text]:focus + label,
-.section .form_grupo .input-field input[type=tel]:focus + label{    
+.form_grupo #formulario3 .input-field input[type=email]:focus + label,
+.form_grupo #formulario3 .input-field input[type=password]:focus + label,
+.form_grupo #formulario3 .input-field input[type=text]:focus + label,
+.form_grupo #formulario3 .input-field input[type=tel]:focus + label{    
     color:  #00abc5;
 }
 /* label underline focus color */
-.section .form_grupo .input-field input[type=email]:focus,
-.section .form_grupo .input-field input[type=password]:focus,
-.section .form_grupo .input-field input[type=text]:focus,
-.section .form_grupo .input-field input[type=tel]:focus{
+.form_grupo #formulario3 .input-field input[type=email]:focus,
+.form_grupo #formulario3 .input-field input[type=password]:focus,
+.form_grupo #formulario3 .input-field input[type=text]:focus,
+.form_grupo #formulario3 .input-field input[type=tel]:focus{
     border-bottom: 1px solid  #00abc5;
     box-shadow: 0 1px 0 0  #00abc5;
 }
-.section .form_grupo .input-field .prefix.active {
+.form_grupo #formulario3 .input-field .prefix.active {
     color: #00abc5;
 }
 /******************************/
