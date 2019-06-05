@@ -14,67 +14,19 @@
             <ui:define name="content">
                 <section id="general">
                     <div id="wrapper">
+                        
                         <!-- Sidebar -->
                         <div id="sidebar-wrapper">
                             <ul class="sidebar-nav">
                                 <div class="contenedor-menu">
                                     <ul class="menu">
                                         <li><a class="categorias"><i class="material-icons left">collections_bookmark</i>CATEGORÍAS</a></li>
-                                        <li><div class="divider"></div></li>                     
-                                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 1<i class="material-icons right">expand_more</i></a>
-                                            <ul>
-                                                <li><a href="#">Item 1</a></li>
-                                                <li><a href="#">Item 2</a></li>
-                                                <li><a href="#">Item 3</a></li>
-                                                <li><a href="#">Item 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 2<i class="material-icons right">expand_more</i></a>
-                                            <ul>
-                                                <li><a href="#">Item 1</a></li>
-                                                <li><a href="#">Item 2</a></li>
-                                                <li><a href="#">Item 3</a></li>
-                                                <li><a href="#">Item 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 3<i class="material-icons right">expand_more</i></a>
-                                            <ul>
-                                                <li><a href="#">Item 1</a></li>
-                                                <li><a href="#">Item 2</a></li>
-                                                <li><a href="#">Item 3</a></li>
-                                                <li><a href="#">Item 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 4<i class="material-icons right">expand_more</i></a>
-                                            <ul>
-                                                <li><a href="#">Item 1</a></li>
-                                                <li><a href="#">Item 2</a></li>
-                                                <li><a href="#">Item 3</a></li>
-                                                <li><a href="#">Item 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 5<i class="material-icons right">expand_more</i></a>
-                                            <ul>
-                                                <li><a href="#">Item 1</a></li>
-                                                <li><a href="#">Item 2</a></li>
-                                                <li><a href="#">Item 3</a></li>
-                                                <li><a href="#">Item 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#" class="waves-effect waves-light">CATEGORÍA 6<i class="material-icons right">expand_more</i></a>
-                                            <ul>
-                                                <li><a href="#">Item 1</a></li>
-                                                <li><a href="#">Item 2</a></li>
-                                                <li><a href="#">Item 3</a></li>
-                                                <li><a href="#">Item 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><div class="divider"></div></li>   
-                                        <li><a href="#" class="waves-effect waves-light">PUBLICACIÓN<i class="material-icons right">expand_more</i></a>
-                                            <ul>
-                                                <li><a href="projects_registration_1.xhtml">Registrar Proyecto<i class="material-icons left">book</i></a></li>
-                                            </ul>
-                                        </li>
+                                        <li><div class="divider"></div></li>  
+                                        <c:forEach items="#{categoriaController.categorias}" var="cat">
+                                            <li>
+                                                <a href="#" class="waves-effect waves-light">#{cat.nombre}</a>
+                                            </li>
+                                        </c:forEach>
                                     </ul>
                                 </div>
                             </ul>
@@ -131,41 +83,6 @@
                             <!-- fin slider -->
 
                             <!-- inicio navbar dropdown -->
-                            <!--<div class="nav3">
-                                <h:form>  
-                                    <p:growl id="messages"/>
-
-                                    <p:menubar id="tb">
-                                        <p:submenu style="margin-left: 20px" label="Cualquier Categoría">
-                                            <p:menuitem value="Categoria 1" url="#" />
-                                            <p:menuitem value="Categoria 2" url="#" />
-                                            <p:menuitem value="Categoria 3" url="#" />
-                                            <p:menuitem value="Categoria 4" url="#" />
-                                        </p:submenu>
-
-                                        <p:submenu label="Cualquier formato">
-                                            <p:menuitem value="Proyectos de Aula" url="#" />
-                                            <p:menuitem value="Proyectos de Grado" url="#" />
-                                            <p:menuitem value="Ensayos" url="#" />
-                                            <p:menuitem value="Monografias" url="#" />
-                                        </p:submenu>
-
-                                        <p:submenu label="Cualquier Idioma">
-                                            <p:menuitem value="Español" url="#" />
-                                            <p:menuitem value="Ingles" url="#" />
-                                        </p:submenu>
-
-                                        <p:submenu label="Orden">
-                                            <p:menuitem value="Más Nuevo" url="#" />
-                                            <p:menuitem value="Más Antiguo" url="#" />
-                                            <p:menuitem value="Descendente A-Z" url="#" />
-                                            <p:menuitem value="Ascendente Z-A" url="#" />
-                                            <p:menuitem value="Más Visto" url="#" />
-                                        </p:submenu>
-                                    </p:menubar>
-                                    <p:sticky target="tb" />
-                                </h:form>
-                            </div>-->
                             <header class="header3">
                                 <div class="row">
                                     <div id="nav3">
@@ -181,9 +98,6 @@
                                                             <li><a class="dropdown-trigger lista2" href="#!" data-target="formato"><h7>Cualquier Formato</h7><i class="material-icons right">arrow_drop_down</i></a></li>
                                                         </div>
                                                         <div class="">
-                                                            <li><a class="dropdown-trigger lista3" href="#!" data-target="idioma"><h7>Cualquier Idioma</h7><i class="material-icons right">arrow_drop_down</i></a></li>
-                                                        </div>
-                                                        <div class="">
                                                             <li><a class="dropdown-trigger lista4" href="#!" data-target="orden"><h7>Cualquier Orden</h7><i class="material-icons right">arrow_drop_down</i></a></li>
                                                         </div>
                                                     </ul>
@@ -192,31 +106,23 @@
                                         </nav>
 
                                         <ul id="categoria" class="dropdown-content">
-                                            <c:forEach items="#{usuarioController.usuarios}" var="usu">
-                                                <li><a href="#!">#{usu.nom1}</a></li>
-                                                <!--<li><a href="#!">Categoría 1</a></li>
-                                                <li><a href="#!">Categoría 2</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#!">Categoría 3</a></li>-->
+                                            <c:forEach items="#{categoriaController.categorias}" var="cat">
+                                                <li><a href="#!">#{cat.nombre}</a></li>
                                             </c:forEach> 
                                         </ul>
 
                                         <ul id="formato" class="dropdown-content">
                                             <li><a href="#!">Proyectos de Aula</a></li>
-                                            <li><a href="#!">Proyectos de Grado</a></li>
-                                            <li><a href="#!">Ensayos</a></li>
-                                            <li><a href="#!">Monografias</a></li>
-                                        </ul>
-                                        <ul id="idioma" class="dropdown-content">
-                                            <li><a href="#!">Español</a></li>
-                                            <li><a href="#!">English</a></li>           
+                                            <li class="disabled"><a href="#!">Proyectos de Grado</a></li>
+                                            <li class="disabled"><a href="#!">Ensayos</a></li>
+                                            <li class="disabled"><a href="#!">Monografias</a></li>
                                         </ul>
                                         <ul id="orden" class="dropdown-content">
-                                            <li><a href="#!">Más Nuevo</a></li>
-                                            <li><a href="#!">Más Antiguo</a></li>
-                                            <li><a href="#!">Descendente A-Z</a></li>
-                                            <li><a href="#!">Ascendente Z-A</a></li>
-                                            <li><a href="#!">Más Visto</a></li>
+                                            <li class="disabled"><a href="#!">Más Nuevo</a></li>
+                                            <li class="disabled"><a href="#!">Más Antiguo</a></li>
+                                            <li class="disabled"><a href="#!">Descendente A-Z</a></li>
+                                            <li class="disabled"><a href="#!">Ascendente Z-A</a></li>
+                                            <li class="disabled"><a href="#!">Más Visto</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -265,167 +171,6 @@
                                             <span class="left" id="total_reg"></span>
                                             <ul class="pagination pager" id="myPager"></ul>
                                         </div>
-                                        <!--<div class="col s6 m4 l3">
-                                            <div class="card sticky-action hoverable">
-                                                <div class="card-image waves-effect waves-block waves-light">
-                                                    <img src="resources/img/portada.jpg" class="responsive-img activator" alt=""/>
-                                                </div> 
-                                                <div class="card-action hide-on-med-and-down">
-                                                    <span class="card-title activator grey-text text-darken-4">Card Title</span>                                
-                                                </div>
-                                                <div class="card-action">
-                                                    <div class="vote_bar">
-                                                        <div class="vote_progress"></div>
-                                                    </div>
-                                                    <div class="vote_btns">
-                                                        <button class="vote_btn vote_like tooltipped" data-tooltip="Me gusta este proyecto"><i class="material-icons" >thumb_up</i> 0</button>
-                                                        <button class="vote_btn vote_dislike tooltipped" data-tooltip="No me gusta este proyecto"><i class="material-icons">thumb_down</i> 0</button>
-                                                    </div>                                            
-                                                </div>
-                                                <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                                </div>
-                                            </div>                                    
-                                        </div>
-                                        <div class="col s6 m4 l3">
-                                            <div class="card sticky-action hoverable">
-                                                <div class="card-image waves-effect waves-block waves-light">
-                                                    <img src="resources/img/portada.jpg" class="responsive-img activator" alt=""/>
-                                                </div> 
-                                                <div class="card-action hide-on-med-and-down">
-                                                    <span class="card-title activator grey-text text-darken-4">Card Title</span>                                
-                                                </div>
-                                                <div class="card-action">
-                                                    <div class="vote_bar">
-                                                        <div class="vote_progress"></div>
-                                                    </div>
-                                                    <div class="vote_btns">
-                                                        <button class="vote_btn vote_like tooltipped" data-tooltip="Me gusta este proyecto"><i class="material-icons" >thumb_up</i> 0</button>
-                                                        <button class="vote_btn vote_dislike tooltipped" data-tooltip="No me gusta este proyecto"><i class="material-icons">thumb_down</i> 0</button>
-                                                    </div>                                            
-                                                </div>
-                                                <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                                </div>
-                                            </div>                                    
-                                        </div>
-                                        <div class="col s6 m4 l3">
-                                            <div class="card sticky-action hoverable">
-                                                <div class="card-image waves-effect waves-block waves-light">
-                                                    <img src="resources/img/portada.jpg" class="responsive-img activator" alt=""/>
-                                                </div> 
-                                                <div class="card-action hide-on-med-and-down">
-                                                    <span class="card-title activator grey-text text-darken-4">Card Title</span>                                
-                                                </div>
-                                                <div class="card-action">
-                                                    <div class="vote_bar">
-                                                        <div class="vote_progress"></div>
-                                                    </div>
-                                                    <div class="vote_btns">
-                                                        <button class="vote_btn vote_like tooltipped" data-tooltip="Me gusta este proyecto"><i class="material-icons" >thumb_up</i> 0</button>
-                                                        <button class="vote_btn vote_dislike tooltipped" data-tooltip="No me gusta este proyecto"><i class="material-icons">thumb_down</i> 0</button>
-                                                    </div>                                            
-                                                </div>
-                                                <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                                </div>
-                                            </div>                                    
-                                        </div>
-                                        <div class="col s6 m4 l3">
-                                            <div class="card sticky-action hoverable">
-                                                <div class="card-image waves-effect waves-block waves-light">
-                                                    <img src="resources/img/portada.jpg" class="responsive-img activator" alt=""/>
-                                                </div> 
-                                                <div class="card-action hide-on-med-and-down">
-                                                    <span class="card-title activator grey-text text-darken-4">Card Title</span>                                
-                                                </div>
-                                                <div class="card-action">
-                                                    <div class="vote_bar">
-                                                        <div class="vote_progress"></div>
-                                                    </div>
-                                                    <div class="vote_btns">
-                                                        <button class="vote_btn vote_like tooltipped" data-tooltip="Me gusta este proyecto"><i class="material-icons" >thumb_up</i> 0</button>
-                                                        <button class="vote_btn vote_dislike tooltipped" data-tooltip="No me gusta este proyecto"><i class="material-icons">thumb_down</i> 0</button>
-                                                    </div>                                            
-                                                </div>
-                                                <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                                </div>
-                                            </div>                                    
-                                        </div>
-                                        <div class="col s6 m4 l3">
-                                            <div class="card sticky-action hoverable">
-                                                <div class="card-image waves-effect waves-block waves-light">
-                                                    <img src="resources/img/portada.jpg" class="responsive-img activator" alt=""/>
-                                                </div> 
-                                                <div class="card-action hide-on-med-and-down">
-                                                    <span class="card-title activator grey-text text-darken-4">Card Title</span>                                
-                                                </div>
-                                                <div class="card-action">
-                                                    <div class="vote_bar">
-                                                        <div class="vote_progress"></div>
-                                                    </div>
-                                                    <div class="vote_btns">
-                                                        <button class="vote_btn vote_like tooltipped" data-tooltip="Me gusta este proyecto"><i class="material-icons" >thumb_up</i> 0</button>
-                                                        <button class="vote_btn vote_dislike tooltipped" data-tooltip="No me gusta este proyecto"><i class="material-icons">thumb_down</i> 0</button>
-                                                    </div>                                            
-                                                </div>
-                                                <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                                </div>
-                                            </div>                                    
-                                        </div>
-                                        <div class="col s6 m4 l3">
-                                            <div class="card sticky-action hoverable">
-                                                <div class="card-image waves-effect waves-block waves-light">
-                                                    <img src="resources/img/portada.jpg" class="responsive-img activator" alt=""/>
-                                                </div> 
-                                                <div class="card-action hide-on-med-and-down">
-                                                    <span class="card-title activator grey-text text-darken-4">Card Title</span>                                
-                                                </div>
-                                                <div class="card-action">
-                                                    <div class="vote_bar">
-                                                        <div class="vote_progress"></div>
-                                                    </div>
-                                                    <div class="vote_btns">
-                                                        <button class="vote_btn vote_like tooltipped" data-tooltip="Me gusta este proyecto"><i class="material-icons" >thumb_up</i> 0</button>
-                                                        <button class="vote_btn vote_dislike tooltipped" data-tooltip="No me gusta este proyecto"><i class="material-icons">thumb_down</i> 0</button>
-                                                    </div>                                            
-                                                </div>
-                                                <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                                </div>
-                                            </div>                                    
-                                        </div>
-                                        <div class="col s6 m4 l3">
-                                            <div class="card sticky-action hoverable">
-                                                <div class="card-image waves-effect waves-block waves-light">
-                                                    <img src="resources/img/portada.jpg" class="responsive-img activator" alt=""/>
-                                                </div> 
-                                                <div class="card-action hide-on-med-and-down">
-                                                    <span class="card-title activator grey-text text-darken-4">Card Title</span>                                
-                                                </div>
-                                                <div class="card-action">
-                                                    <div class="vote_bar">
-                                                        <div class="vote_progress"></div>
-                                                    </div>
-                                                    <div class="vote_btns">
-                                                        <button class="vote_btn vote_like tooltipped" data-tooltip="Me gusta este proyecto"><i class="material-icons" >thumb_up</i> 0</button>
-                                                        <button class="vote_btn vote_dislike tooltipped" data-tooltip="No me gusta este proyecto"><i class="material-icons">thumb_down</i> 0</button>
-                                                    </div>                                            
-                                                </div>
-                                                <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                                </div>
-                                            </div>                                    
-                                        </div>-->
                                     </div>
                                 </div>
                             </section>
