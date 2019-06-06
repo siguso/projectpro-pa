@@ -139,7 +139,7 @@
                                             </blockquote>
                                         </div>
                                         <table id="myTable">
-                                            <c:forEach items="#{usuarioController.usuarios}" var="usu">
+                                            <c:forEach items="#{proyectoController.proyectos}" var="pro">
                                                 <tr>
                                                 <div class="col s6 m4 l3">
                                                     <div class="card sticky-action hoverable">
@@ -147,7 +147,7 @@
                                                             <img src="resources/img/portada.jpg" class="responsive-img activator" alt=""/>
                                                         </div> 
                                                         <div class="card-action hide-on-med-and-down">
-                                                            <span class="card-title activator grey-text text-darken-4">#{usu.nom1}</span>                                
+                                                            <span class="card-title activator grey-text text-darken-4">#{pro.titulo}</span>                                
                                                         </div>
                                                         <div class="card-action">
                                                             <div class="vote_bar">
@@ -159,8 +159,8 @@
                                                             </div>                                            
                                                         </div>
                                                         <div class="card-reveal">
-                                                            <span class="card-title grey-text text-darken-4">#{usu.nom1}<i class="material-icons right">close</i></span>
-                                                            <a href="projects_information.xhtml"><p>#{usu.apell1}</p></a>
+                                                            <span class="card-title grey-text text-darken-4">#{pro.titulo}<i class="material-icons right">close</i></span>
+                                                            <a href="projects_information.xhtml" class="tooltipped" data-tooltip="Presiona para más información"><p>#{pro.descripcion}</p></a>
                                                         </div>
                                                     </div>                                    
                                                 </div>

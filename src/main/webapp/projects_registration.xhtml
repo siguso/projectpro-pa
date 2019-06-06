@@ -42,18 +42,28 @@
                                     <div class="row"> 
                                         <div class="input-field col s12 m6 l5 offset-l1">
                                             <i class="material-icons prefix">title</i>
-                                            <h:inputText id="title" required="true" value="" requiredMessage="Titulo es requerido" />
-                                            <h:outputLabel for="title" value="Titulo(*)"/>
+                                            <h:inputText id="title" required="true" value="#{proyectoController.proyecto.titulo}" requiredMessage="Titulo del proyecto es requerido" />
+                                            <h:outputLabel for="title" value="Titulo del Proyecto(*)"/>
                                         </div>
                                         <div class="input-field col s12 m6 l5">  
                                             <i class="material-icons prefix">security</i>
-                                            <h:selectOneMenu value="" id="licencia" required="true" requiredMessage="Tipo de licencia es requerida"> 
+                                            <h:selectOneMenu value="#{licenciaController.licencia}" id="licencia" required="true" requiredMessage="Tipo de licencia es requerida"> 
                                                 <f:selectItem itemValue = "" itemLabel = "Tipo de Licencia(*)" itemDisabled="true" /> 
-                                                <f:selectItem itemValue = "1" itemLabel = "Libre" />
-                                                <f:selectItem itemValue = "2" itemLabel = "Privada" /> 
+                                                <f:selectItems value="#{licenciaController.licencias}" var="lic" itemValue="#{lic.codLicencia}" itemLabel="#{lic.nombre}" />
                                             </h:selectOneMenu> 
                                         </div>
                                         <div class="input-field col s12 m11 l4 offset-l1">
+                                            <i class="material-icons prefix">title</i>
+                                            <p:inputText id="title2" placeholder="" required="true" value="" readonly="true" requiredMessage="Nombre del grupo es requerido" />
+                                            <h:inputHidden id="codAutor1" value=""/>
+                                            <h:outputLabel for="title2" value="Nombre del Grupo(*)"/>
+                                        </div>
+                                        <div class="input-field col s12 m11 l1">
+                                            <a class="modal-trigger btn waves-effect waves-light" href="#listado_usuario_modal2" onclick="javascript:setAutor1('1');">
+                                                <i class="material-icons center">add</i>
+                                            </a>
+                                        </div>
+                                        <!--<div class="input-field col s12 m11 l4 offset-l1">
                                             <i class="material-icons prefix">account_circle</i>
                                             <p:inputText id="autor1" placeholder="" required="true" value="" readonly="true" requiredMessage="1er autor es requerido" />
                                             <h:inputHidden id="codAutor1" value=""/>
@@ -118,17 +128,17 @@
                                                 <f:selectItem itemValue = "5" itemLabel = "5to Semestre" />
                                                 <f:selectItem itemValue = "6" itemLabel = "6to Semestre" /> 
                                             </h:selectOneMenu> 
-                                        </div>
-                                        <div class="input-field col s12 m6 l8 offset-l2">
+                                        </div>-->
+                                        <div class="input-field col s12 m6 l5">
                                             <i class="material-icons prefix">collections_bookmark</i>
-                                            <h:selectManyListbox class="select_all" value="#{usuarioController.usuario}" id="categorias" required="true" requiredMessage="Categoria es requerida">
+                                            <h:selectManyListbox class="select_all" value="#{categoriaController.categoria}" id="categorias" required="true" requiredMessage="Categoria es requerida">
                                                 <f:selectItem itemValue = "" itemLabel = "Categorias(*)" itemDisabled="true" /> 
-                                                <f:selectItems value="#{usuarioController.usuarios}" var="usu" itemValue="#{usu.cod_usuario}" itemLabel="#{usu.nom1}" />
+                                                <f:selectItems value="#{categoriaController.categorias}" var="cat" itemValue="#{cat.codCategoria}" itemLabel="#{cat.nombre}" />
                                             </h:selectManyListbox>
                                         </div>
                                         <div class="input-field col s12 l8 offset-l2">
                                             <i class="material-icons prefix">create</i>
-                                            <p:inputTextarea id="descripcion" required="true" value="" requiredMessage="Descripción es requerida" rows="6" counter="display" maxlength="500" counterTemplate="{0} Caracteres restantes" />
+                                            <p:inputTextarea id="descripcion" required="true" value="#{proyectoController.proyecto.descripcion}" requiredMessage="Descripción es requerida" rows="6" counter="display" maxlength="500" counterTemplate="{0} Caracteres restantes" />
                                             <h:outputLabel for="descripcion" value="Descripción(*)"/>
                                             <br />
                                             <h:outputText id="display" class="right" style="font-size: 11px" />
@@ -225,7 +235,7 @@
                     <div class="row form_project_registration">
                         <h:form>
                             <div class="input-field col s12 l6">
-                                <h:commandLink value="Registrar proyecto" styleClass="btn waves-effect waves-light" />
+                                <h:commandLink value="Registrar proyecto" actionListener="#{proyectoController.registrar()}" styleClass="btn waves-effect waves-light"  />
                             </div>
                             <div class="input-field col s12 l6">
                                 <h:outputLink value="projects.xhtml" styleClass="btn waves-effect waves-light">Regresar</h:outputLink>

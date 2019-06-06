@@ -274,16 +274,16 @@ body{
 /******************************/
 
 /********** botones **********/
-.section .btn{
+.section .forms .btn{
     background-color: #00abc5;
 }
-.section .btn:hover{
+.section .forms .btn:hover{
     background-color: #bdbdbd;
 }
-.section .btn{
+.section .forms .btn{
     width: 100%;
 }
-.section .archivo{
+.section .forms .archivo{
     width: 30%;
 }
 /****************************/

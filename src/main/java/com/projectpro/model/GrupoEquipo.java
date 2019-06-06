@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.projectpro.model;
 
 import java.io.Serializable;
@@ -20,6 +25,10 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+/**
+ *
+ * @author rayda
+ */
 @Entity
 @Table(name = "grupo_equipo")
 @XmlRootElement
@@ -36,19 +45,16 @@ public class GrupoEquipo implements Serializable {
     @Basic(optional = false)
     @Column(name = "cod_grupo_equipo")
     private Short codGrupoEquipo;
-    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
     @Column(name = "nombre")
     private String nombre;
-    
     @Basic(optional = false)
     @NotNull
     @Column(name = "fecha_creacion")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaCreacion;
-    
     @OneToMany(mappedBy = "codGrupoEquipo")
     private Collection<Usuario> usuarioCollection;
 
